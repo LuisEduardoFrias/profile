@@ -6,33 +6,47 @@
 */
 
 :root {
-	--foreground-rgb: 0, 0, 0;
-	--background-start-rgb: 214, 219, 220;
-	--background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--foreground-rgb: 255, 255, 255;
-		--background-start-rgb: 0, 0, 0;
-		--background-end-rgb: 0, 0, 0;
-	}
+    --blue-0: #0093fa;
+    --blue-1st: #000a61;
+    --blue-2nd: #0b40a8;
+    --blue-3rd: #31ddff;
+    --rose-1st: #86002b;
+    --rose-2nd: #e55d8a;
+    --rose-3rd: #e11e5e;
+    
+    --font-color: #ffffff;
+    --border-color: #ffffff;
+    --theme-1st: var(--blue-1st);
+    --theme-2nd: var(--blue-2nd);
+    --theme-3rd: var(--blue-3rd);
+    --theme-4th: #000000;
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-html,
-body {
-	min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	color: rgb(var(--foreground-rgb));
-	background: linear-gradient(to bottom,
-			transparent,
-			rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+    min-height: 100dvh;
+    color: var(--font-color);
+    background-color: var(--theme-4th);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button, a:hover {
+    transform: scale(1.2);
+}
+
+button, a:active {
+    transform: scale(0.8);
 }

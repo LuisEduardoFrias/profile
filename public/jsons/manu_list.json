@@ -1,0 +1,27 @@
+[
+    {
+        "src": "/menu/skills.png",
+        "alt": "Skills icon",
+        "name": "</ Skill >"
+    },
+    {
+        "src": "/menu/projects.png",
+        "alt": "Projects icon",
+        "name": "</Projects >"
+    },
+    {
+        "src": "/menu/experiences.png",
+        "alt": "experiences icon",
+        "name": "</Experiences >"
+    },
+    {
+        "src": "/menu/studies.png",
+        "alt": "Skills icon",
+        "name": "</Studies >"
+    },
+    {
+        "src": "/menu/about.png",
+        "alt": "Skills icon",
+        "name": "</About_me >"
+    }
+]
