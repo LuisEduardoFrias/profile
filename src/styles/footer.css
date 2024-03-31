@@ -3,14 +3,17 @@
     position: relative;
     
     >nav {
+        position: static;
         width: 100%;
+        height: 50px;
         
         ul {
+            position: inherit;
             width: 100%;
             height: 100%;
             list-style: none;
             padding: 5px;
-            background-color: var(--theme-1st);
+            background-color: var(--theme-4th);
             box-shadow: inset 0 0 3px 1px var(--theme-2nd);
             
             display: flex;
@@ -19,6 +22,7 @@
             gap: 20px;
             
             li {
+                position: inherit;
                 animation: move 1s linear both;
                 width: 25px;
                 height: 25px;
@@ -30,6 +34,7 @@
                 border: 1px solid var(--border-color);
                 border-radius: 5px;
                 color: var(--font-color);
+                -webkit-tap-highlight-color: transparent;
                 transition: transform .5s ease-in,
                     filter .5s ease-in-out,
                     border-radius .5s ease-out;
@@ -42,6 +47,7 @@
                 align-items: center;
                 
                 a {
+                    position: inherit;
                     width: 100%;
                     height: 100%;
                     border-radius: 5px;
@@ -50,6 +56,7 @@
                     justify-content: center;
                     align-items: center;
                     background-color: transparent;
+                    -webkit-tap-highlight-color: transparent;
                     padding: 8px;
                     
                     img {
@@ -65,7 +72,7 @@
                 .tooltip {
                     position: absolute;
                     bottom: 0;
-                    opacity: 0;
+                    opacity: 1;
                     visibility: hidden;
                     font-size: 6px;
                     border: 1px solid var(--border-color);
@@ -102,12 +109,11 @@
             opacity: 1;
             visibility: visible;
             padding: 3px;
-            bottom: -20px;
+            bottom: -30px;
             border-radius: 3px;
             background-color: transparent;
             color: var(--font-2nd);
         }
-        
     }
     
 }
@@ -115,17 +121,28 @@
 .footer-container>div:last-child {
     position: absolute;
     bottom: 10px;
-    
     width: 100%;
     padding-inline: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    perspective: 1000;
     
     >button {
         border: none;
         background-color: transparent;
-        
+}
+    
+    button:hover,
+    a:hover {
+        transform: scale(1.1);
     }
+    
+    button:active,
+    a:active {
+        transform: scale(0.8);
+    }
+    
 }
 
 @keyframes move {

@@ -16,8 +16,9 @@ export default function Footer({ days_one }: { days_one: any }) {
                 </ul>
             </nav>
             <div>
-                <button>
-                    <Image src="/images/cv.png" width={25} height={25} alt={" icon"} />
+                <button style={{ color: "white", display: "flex", alignItems: "center",flexDirection:"column" }}>
+                    <Image src="/images/pdf.png" width={25} height={25} alt={" icon"} />
+                    {"CV"}
                 </button>
                 <div>
                     {Socials.map((social: object, i: number) =>

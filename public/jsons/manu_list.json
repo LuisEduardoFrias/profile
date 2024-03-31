@@ -1,26 +1,26 @@
 [
     {
-        "src": "/menu/skills.png",
+        "src": "/menu/skills.webp",
         "alt": "Skills icon",
         "name": "</ Skill >"
     },
     {
-        "src": "/menu/projects.png",
+        "src": "/menu/projects.webp",
         "alt": "Projects icon",
         "name": "</Projects >"
     },
     {
-        "src": "/menu/experiences.png",
+        "src": "/menu/experiences.webp",
         "alt": "experiences icon",
         "name": "</Experiences >"
     },
     {
-        "src": "/menu/studies.png",
+        "src": "/menu/studies.webp",
         "alt": "Skills icon",
         "name": "</Studies >"
     },
     {
-        "src": "/menu/about.png",
+        "src": "/menu/about.webp",
         "alt": "Skills icon",
         "name": "</About_me >"
     }
