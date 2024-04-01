@@ -1,7 +1,9 @@
+/*
+
 .back-container-home {
     position: relative;
     width: 100%;
-    /*	height: 100dvh;*/
+	/////height: 100dvh;
     height: 450px;
     box-sizing: border-box;
     margin: 30px;
@@ -55,38 +57,44 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
+*/
 
-header {
-    grid-area: 1 / 1 / 2 / 2;
+.sheet-left {
     width: 100%;
     height: 100%;
-    border: 1px solid var(--border-color);
-    border-bottom-width: 0px;
-    border-radius: 10px 10px 0 0;
-}
-
-main {
-    grid-area: 1 / 2 / 5 / 3;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--border-color);
     border-radius: 10px;
     
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: space-around;
+}
+
+header {
+    width: inherit;
+    height: inherit;
 }
 
 footer {
-    grid-area: 2 / 1 / 3 / 2;
-    height: 130px;
-    border: 1px solid var(--border-color);
-    border-top: 0;
-    border-radius: 0 0 10px 10px;
+    height: 140px;
     
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.cheet-right {
+    width: inherit;
+    height: inherit;
+    border-radius: 10px;
+}
+
+main {
+    width: inherit;
+    height: inherit;
+    
+    display: flex;
+    justify-content: center;
 }
 
 /*********** Responsibe **************/

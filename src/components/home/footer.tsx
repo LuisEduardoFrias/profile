@@ -1,10 +1,10 @@
 
 import { ReactElement } from "react"
 import Image from "next/image";
-import Li, { Option } from "cp/li.tsx";
+import Li, { Option } from "./li.tsx";
 import MenuList from "public/jsons/manu_list.json"
 import Socials from "public/jsons/socials.json"
-import "st/footer.css";
+import "st/home/footer.css";
 
 export default function Footer({ days_one }: { days_one: any }) {
     //
@@ -16,7 +16,7 @@ export default function Footer({ days_one }: { days_one: any }) {
                 </ul>
             </nav>
             <div>
-                <button style={{ color: "white", display: "flex", alignItems: "center",flexDirection:"column" }}>
+                <button style={{ color: "white", display: "flex", alignItems: "center", flexDirection: "column" }}>
                     <Image src="/images/pdf.png" width={25} height={25} alt={" icon"} />
                     {"CV"}
                 </button>

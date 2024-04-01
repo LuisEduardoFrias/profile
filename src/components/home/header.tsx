@@ -1,7 +1,7 @@
 /** @format */
 
 import localFont from "next/font/local";
-import "st/header.css";
+import "st/home/header.css";
 
 export default function Header({ days_one }: { days_one: any }) {
 	return (

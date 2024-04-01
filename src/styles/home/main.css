@@ -1,0 +1,61 @@
+/**/
+.main-container {
+    height: 100%;
+    border-radius: inherit;
+    background-color: var(--theme-1st);
+    
+    >pre {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+        padding: 15px;
+        z-index: 0;
+        
+        code {
+            text-wrap: wrap;
+            filter: blur(-1.5px);
+            animation: codeOpacity 1s both 1s;
+        }
+    }
+    
+    >img:first-child {
+        position: absolute;
+        opacity: 0;
+        width: 180px;
+        height: auto;
+        left: 0;
+        transform: translateX(-50%);
+        animation: show 1s both .5s;
+    }
+    
+    >img:nth-child(2) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        filter: blur(1000px);
+        transform: translateZ(0%) scale(20);
+        z-index: 1;
+        animation: imagePresentation 1s both .5s;
+    }
+}
+
+@keyframes show {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes imagePresentation {
+    to {
+        filter: blur(0px);
+    }
+}
+
+@keyframes codeOpacity {
+    to {
+        filter: blur(1px)
+    }
+}
