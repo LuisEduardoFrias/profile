@@ -15,6 +15,12 @@ const keyframes = {
     }
 };
 
+type KeyProps = {
+    text: string | undefined,
+    subText: string | undefined,
+    className: string | undefined
+}
+
 export default function KeyBoard() {
     const text = "programando"
 
@@ -27,7 +33,7 @@ export default function KeyBoard() {
     return (
         <div className="container-keyboard">
             <div className="keyboard-pronter">
-                <div style={{ ...animationStyles }} class="text">{text}</div>
+                <div style={{ ...animationStyles }} className="text">{text}</div>
             </div>
             <div className="keyboard">
 
@@ -92,7 +98,7 @@ export default function KeyBoard() {
     )
 }
 
-const row1 = [
+const row1: KeyProps[] = [
     {
         className: "key orange esc",
         text: "esc",
@@ -165,7 +171,7 @@ const row1 = [
     }
 ]
 
-const row2 = [
+const row2: KeyProps[] = [
     {
         className: "key",
         text: "esc",
@@ -238,7 +244,7 @@ const row2 = [
     }
 ]
 
-const row3 = [
+const row3: KeyProps[] = [
     {
         className: "key tab",
         text: "tab",
@@ -311,7 +317,7 @@ const row3 = [
     }
 ]
 
-const row4 = [
+const row4: KeyProps[] = [
     {
         className: "key caps",
         text: "caps",
@@ -384,7 +390,7 @@ const row4 = [
     }
 ]
 
-const row5 = [
+const row5: KeyProps[] = [
     {
         className: "key shitf",
         text: "shitf",
@@ -457,7 +463,7 @@ const row5 = [
     },
 ]
 
-const row6 = [
+const row6: KeyProps[] = [
     {
         className: "key ctrl",
         text: "ctrl",
@@ -509,13 +515,6 @@ const row6 = [
         subText: undefined
     }
 ]
-
-
-type KeyProps = {
-    text: string,
-    subText: string,
-    className: string | undefined
-}
 
 function Key({ text, subText, className }: KeyProps) {
     return (

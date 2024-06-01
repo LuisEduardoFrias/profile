@@ -1,0 +1,17 @@
+[
+    {
+        "href": "https://icon.icepanel.io/Technology/svg/LinkedIn.svg",
+        "img": "/images/linkedin.png",
+        "alt": "LinkedIn icon"
+    },
+    {
+        "href": "https://www.infojobs.net/candidate/cv/view/index.xhtml?fragment-saved=personal-data&codeCv=5fa782ac-8918-4333-92ff-55f12ead09bd&dgv=440197071941682436#personal-data",
+        "img": "/images/infojobs.png",
+        "alt": "InfoJobs icon"
+    },
+    {
+        "href": "https://github.com/LuisEduardoFrias",
+        "img": "/images/github.png",
+        "alt": "GitHub icon"
+    }
+]

@@ -1,13 +1,13 @@
 
-import Skills from "public/jsons/skills";
+import Skills from "../../jsons/skills.json";
 import Skill from "cp/skills/skill";
-import { Sk } from "md/skill";
+import { Skill as Sk } from "md/skill";
 import "st/skills/back_end.css";
 
 export function Draw({ skill, index }: { skill: Sk, index: number }) {
     return (
         <div key={index} className="flex-1 flex-col">
-            <Skill key={index} {...skill} />
+            <Skill {...skill} />
         </div>
     )
 }
@@ -23,14 +23,14 @@ export default function BackEnd() {
                 <span>Experiencia Avanzada</span>
                 <div>
                     {
-                        Skills.backend.advancedExperience.map((e, index) => <Draw skill={e} index={index} />)
+                        Skills.backend.advancedExperience.map((e, index) => <Draw key={index} skill={e} index={index} />)
                     }
                 </div>
 
                 <span>Experiencia Intermedia</span>
                 <div>
                     {
-                        Skills.backend.middleExperience.map((e, index)=> <Draw skill={e} index={index} />)
+                        Skills.backend.middleExperience.map((e: Sk, index) => <Draw key={index} skill={e} index={index} />)
                     }
                 </div>
             </div>

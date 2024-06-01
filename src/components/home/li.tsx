@@ -3,10 +3,11 @@ import { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-type Option = {
+export type Option = {
     src: string;
     alt: string;
     name: string;
+    href: string;
 };
 
 export default function Li(
@@ -19,7 +20,7 @@ export default function Li(
         src: string;
         alt: string;
         name: string;
-        hr3f: string;
+        href: string;
     }): ReactElement {
     return (
         <li>

@@ -7,7 +7,7 @@ import Icon from "cp/icon"
 import Styles from "st/book_container.module.css";
 
 type BookContainerProps = {
-    children: [ReactNode, ReactNode] | ReactNode;
+    children:  React.ReactNode;
 };
 
 const BookContainer: React.FC<BookContainerProps> = ({ children }) => {
@@ -41,7 +41,7 @@ const BookContainer: React.FC<BookContainerProps> = ({ children }) => {
 */
 
 type PageProps = {
-    children: ReactNode[];
+    children: React.ReactNode[];
 };
 
 const Pages: React.FC<PageProps> = ({ children }) => {
@@ -122,8 +122,8 @@ type IconChangePageProps = {
 const IconChangePage: React.FC<IconChangePageProps> = ({ handleChange, className }) => {
     return (
         <div onClick={handleChange} className={`${Styles.changePage} ${className}`} >
-            <Icon> auto_stories</Icon >
-            <Icon>import_contacts</Icon>
+            <Icon iconName={"auto_stories"} />
+            <Icon iconName={"import_contacts"} />
         </div >
     )
 }

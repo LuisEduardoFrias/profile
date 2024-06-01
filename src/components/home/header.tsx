@@ -8,7 +8,6 @@ export default function Header({ days_one }: { days_one: any }) {
         <header className="header-container">
             <div>
                 <div className={days_one.className}>
-                // https://www.instagram.com/reel/C6tpUhCtWqZ/?igsh=cnhqOG93ZXd1YjR3
                     <h1>Hola! soy Luis Eduardo programador</h1>
                     <h2>BackEnd y FrontEnd</h2>
                     <div>

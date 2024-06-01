@@ -8,6 +8,7 @@ export default function AboutMe() {
         <h1>https://fonts.google.com/icons?icon.query=book</h1>
         <h1>https://www.freepik.es/icono/git_10042194#fromView=search&page=3&position=1&uuid=259880dc-8af5-4d0f-99a0-d1412414767b</h1>
         <h1>https://techicons.dev/icons/angular</h1>
+        <h1>https://www.instagram.com/reel/C6tpUhCtWqZ/?igsh=cnhqOG93ZXd1YjR3</h1>
     </>
 }
 

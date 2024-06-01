@@ -3,7 +3,7 @@
 import React from "react";
 
 interface IIcon {
-    children: React.ReactElement;
+    iconName: string;
     fill?: number;
     wght?: number;
     grad?: number;
@@ -14,7 +14,7 @@ interface IIcon {
 }
 
 export default function Icon({
-    children,
+    iconName,
     fill = 0,
     wght = 400,
     grad = 0,
@@ -25,7 +25,7 @@ export default function Icon({
 }: IIcon) {
     return (
         <div style={{ fontVariationSettings: `'FILL' ${fill}, 'wght' ${wght}, 'GRAD' ${grad}, 'opsz' ${opsz}`, display: "flex", justifyContent: "center", alignItems: "center" }} className={className}>
-            <span className='material-symbols-outlined'>{children}</span>
+            <span className='material-symbols-outlined'>{iconName}</span>
         </div>
     );
 }

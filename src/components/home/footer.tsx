@@ -1,14 +1,20 @@
 "use client"
 import { ReactElement } from "react"
 import Image from "next/image";
-import Li, { Option } from "./li.tsx";
-import MenuList from "public/jsons/manu_list.json"
-import Socials from "public/jsons/socials.json"
+import Li, { Option } from "./li";
+import MenuList from "../../jsons/manu_list.json"
+import Socials from "../../jsons/socials.json"
 //import { useSubscribeState } from "subscribe_state"
 import "st/home/footer.css";
 
+type Social = {
+    href: string,
+    img: string,
+    alt: string,
+}
+
 export default function Footer({ days_one }: { days_one: any }) {
-   // const [state, dispatch] = useSubscribeState(["name"]);
+    // const [state, dispatch] = useSubscribeState(["name"]);
 
     return (
         <footer className="footer-container" >
@@ -23,8 +29,8 @@ export default function Footer({ days_one }: { days_one: any }) {
                     {"CV"}
                 </button>
                 <div>
-                    {Socials.map((social: object, i: number) =>
-                        <a href={social.href}>
+                    {Socials.map((social: Social, i: number) =>
+                        <a key={i} href={social.href}>
                             <Image src={social.img} width={25} height={25} alt={social.alt} />
                         </a >)
                     }

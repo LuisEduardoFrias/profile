@@ -13,7 +13,7 @@ export default function ModalSkill({ href, alt, name, description, onClick }: Mo
     return (
         <dialog open className={Styles.dialogContainer} >
             <button onClick={onClick}>
-                <Icon>close</Icon>
+                <Icon iconName={"close"} />
             </button>
             <span>{name}</span>
             <span>{description}</span>

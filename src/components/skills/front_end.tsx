@@ -1,8 +1,8 @@
 
-import Skills from "public/jsons/skills.json";
+import Skills from "../../jsons/skills.json";
 import Skill from "cp/skills/skill";
 import { Draw } from "./back_end";
-import { Sk } from "md/skill";
+import { Skill as Sk } from "md/skill";
 import "st/skills/back_end.css";
 
 export default function FrontEnd() {
@@ -14,14 +14,14 @@ export default function FrontEnd() {
                 <span>Experiencia Avanzada</span>
                 <div>
                     {
-                        Skills.frontend.advancedExperience.map((e, index)=> <Draw skill={e} index={index} />)
+                        Skills.frontend.advancedExperience.map((e, index) => <Draw key={index} skill={e} index={index} />)
                     }
                 </div>
 
                 <span>Experiencia Intermedia</span>
                 <div>
                     {
-                        Skills.frontend.middleExperience.map((e, index)=> <Draw skill={e} index={index} />)
+                        Skills.frontend.middleExperience.map((e, index) => <Draw key={index} skill={e} index={index} />)
                     }
                 </div>
             </div>
