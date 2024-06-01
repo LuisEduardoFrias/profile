@@ -66,24 +66,11 @@
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: space-around;
 }
 
-header {
-    width: inherit;
-    height: inherit;
-}
-
-footer {
-    height: 140px;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.cheet-right {
+.sheet-right {
     width: inherit;
     height: inherit;
     border-radius: 10px;

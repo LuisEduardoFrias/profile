@@ -1,0 +1,18 @@
+/**/
+.sheet-container {
+    height: 100%;
+    width: 90%;
+    border-radius: inherit;
+    padding: 10px;
+    
+    h2 {
+        text-align: center;
+        background: linear-gradient(180deg,
+                var(--theme-1st) 30%,
+                var(--theme-2nd) 40%,
+                var(--theme-3rd) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-block-end: 50px;
+    }
+}

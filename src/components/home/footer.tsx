@@ -1,13 +1,15 @@
-
+"use client"
 import { ReactElement } from "react"
 import Image from "next/image";
 import Li, { Option } from "./li.tsx";
 import MenuList from "public/jsons/manu_list.json"
 import Socials from "public/jsons/socials.json"
+//import { useSubscribeState } from "subscribe_state"
 import "st/home/footer.css";
 
 export default function Footer({ days_one }: { days_one: any }) {
-    //
+   // const [state, dispatch] = useSubscribeState(["name"]);
+
     return (
         <footer className="footer-container" >
             <nav className={days_one.className}>

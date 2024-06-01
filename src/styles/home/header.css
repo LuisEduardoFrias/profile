@@ -1,55 +1,66 @@
 /**/
 .header-container {
-	>div {
-		margin-block: 50px 10px;
-		padding-inline-start: 15px;
-		
-		display: flex;
-		flex-direction: column;
-		gap: 30px;
-		
-		>div {
-			
-			>h1 {
-				font-size: 27px;
-				width: 200px;
-				margin-block-end: 10px;
-			}
-			
-			>h2 {
-				font-size: 35px;
-				font-weight: 300;
-				background: linear-gradient(230deg,
-						var(--theme-1st) 15%,
-						var(--theme-2nd) 20%,
-						var(--theme-1st) 25%,
-						var(--theme-1st) 40%,
-						var(--theme-2nd) 45%,
-						var(--theme-1st) 50%,
-						var(--theme-1st) 70%,
-						var(--theme-2nd) 75%,
-						var(--theme-1st) 80%,
-						var(--theme-1st) 90%,
-						var(--theme-2nd) 100%);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-			
-			>div {
-				margin-top: 15px;
-			}
-		}
-		
-		p {
-			text-wrap: pretty;
-			text-wrap: balance;
-			width: 80%;
-		}
-		
-		>p {
-			text-align: end;
-			width: 100%;
-			padding-inline-end: 10px;
-		}
-	}
+    width: 100%;
+    height: Calc(100% - 120px);
+    padding-inline: 10px;
+    padding-block: 30px 10px;
+    
+    >div {
+        height: 100%;
+        width: inherit;
+        
+        >div {
+            height: inherit;
+            width: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+            >h1 {
+                font-size: 27px;
+                width: 200px;
+            }
+            
+            >h2 {
+                font-size: 35px;
+                font-weight: 300;
+                background: linear-gradient(230deg,
+                        var(--theme-1st) 15%,
+                        var(--theme-2nd) 20%,
+                        var(--theme-1st) 25%,
+                        var(--theme-1st) 40%,
+                        var(--theme-2nd) 45%,
+                        var(--theme-1st) 50%,
+                        var(--theme-1st) 70%,
+                        var(--theme-2nd) 75%,
+                        var(--theme-1st) 80%,
+                        var(--theme-1st) 90%,
+                        var(--theme-2nd) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            
+            >div {
+                height: 150px;
+                overflow: scroll;
+                
+                p {
+                    font-size: .9rem;
+                    text-wrap: pretty;
+                    padding-inline-end: 10px;
+                    margin-block-end: 3px;
+                    
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                    
+                    strong {
+                        font-weight: bold;
+                        color: var(--theme-2nd);
+                    }
+                }
+            }
+        }
+    }
 }

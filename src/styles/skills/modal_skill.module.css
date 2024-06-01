@@ -1,0 +1,49 @@
+.dialogContainer {
+    position: absolute;
+    margin-top: 10px;
+    border-color: var(--border-color);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 1px #5d5d5d93;
+    color: var(--border-color);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding: 5px;
+    min-width: 80px;
+    max-height: 200px;
+    overflow-y: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.dialogContainer>button {
+    border-radius: 50px;
+    border: 1px solid var(--theme-1st);
+}
+
+.dialogContainer>button:hover {
+    background-color: var(--theme-2nd);
+    border: 1px solid var(--theme-1st);
+    border: 1px solid var(--border-color);
+}
+
+.dialogContainer>button:active {
+    transform: scale(.8);
+}
+
+.dialogContainer span {
+    font-size: 10px;
+}
+
+.dialogContainer>span:nth-child(2) {
+    width: 100%;
+    text-align: center;
+}
+
+.dialogContainer>span:nth-child(3) {
+    width: 100%;
+    font-size: 7px;
+}

@@ -2,8 +2,8 @@
 /*
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 */
+@tailwind utilities;
 
 :root {
     --blue-0: #0093fa;
