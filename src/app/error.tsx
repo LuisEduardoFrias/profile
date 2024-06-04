@@ -1,7 +1,6 @@
 'use client' // Error components must be Client Components
 
-import { useEffect } from 'react'
-
+import Image from "next/image";
 export default function Error({
     error,
     reset,
@@ -9,17 +8,13 @@ export default function Error({
     error: Error & { digest?: string }
     reset: () => void
 }) {
-    useEffect(() => {
-        // Log the error to an error reporting service
-        console.error(error)
-    }, [error])
 
     return (
         <div>
+            <Image src={"/images/homero_simpsons_404_edi.webp"} width={"100"} height={"100"} alt={"image error 404"} />
             <h2>Something went wrong!</h2>
             <button
                 onClick={
-                    // Attempt to recover by trying to re-render the segment
                     () => reset()
                 }
             >

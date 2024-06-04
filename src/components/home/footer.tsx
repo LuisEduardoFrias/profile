@@ -4,7 +4,6 @@ import Image from "next/image";
 import Li, { Option } from "./li";
 import MenuList from "../../jsons/manu_list.json"
 import Socials from "../../jsons/socials.json"
-//import { useSubscribeState } from "subscribe_state"
 import "st/home/footer.css";
 
 type Social = {
@@ -14,7 +13,6 @@ type Social = {
 }
 
 export default function Footer({ days_one }: { days_one: any }) {
-    // const [state, dispatch] = useSubscribeState(["name"]);
 
     return (
         <footer className="footer-container" >
