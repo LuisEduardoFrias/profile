@@ -9,7 +9,7 @@ import "st/home/footer.css";
 
 type Social = {
     href: string,
-    img: string,
+    src: string,
     alt: string,
 }
 
@@ -25,13 +25,13 @@ export default function Footer({ days_one }: { days_one: any }) {
             </nav>
             <div>
                 <button style={{ color: "white", display: "flex", alignItems: "center", flexDirection: "column" }}>
-                    <Image src="/images/pdf.png" width={25} height={25} alt={" icon"} />
+                    <Image src={"/images/pdf.webp"} width={24} height={24} alt={"cv pdf icon"} />
                     {"CV"}
                 </button>
                 <div>
                     {Socials.map((social: Social, i: number) =>
                         <a key={i} href={social.href}>
-                            <Image src={social.img} width={25} height={25} alt={social.alt} />
+                            <Image src={social.src} width={24} height={24} alt={social.alt} />
                         </a >)
                     }
                 </div>

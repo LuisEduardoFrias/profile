@@ -267,3 +267,16 @@
 .sheetRightContainerPage>div {
     border-radius: 10px 0 0 10px;
 }
+
+@media (max-width: 767px) {
+    
+    .backContainerHome {
+        height: 100vh;
+    }
+    
+    .containerHome {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 50%);
+        grid-template-areas: "right" "left";
+    }
+}
