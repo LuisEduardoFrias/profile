@@ -7,8 +7,8 @@ import 'st/home/main.css'
 export default function Main() {
     return (
         <main className="main-container">
-            <Image src={logo} priority={true} width={3264} height={2177} alt="logo ico" />
-            <Image src={profile} priority={true} width={2094} height={2176} alt="Image of profile" />
+            <Image id="logo" src={logo} priority={true} width={3264} height={2177} alt="logo ico" />
+            <Image id="profile" src={profile} priority={true} width={2094} height={2176} alt="Image of profile" />
 
             <pre>
                 <code lang="html" dir="ltr">

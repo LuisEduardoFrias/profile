@@ -38,31 +38,32 @@
         }
     }
     
-    >img:first-child {
-        position: absolute;
-        left: 0;
-        z-index: 9;
-        width: 180px;
-        height: auto;
-         opacity: 0;
-        transform: translateX(-50%);
-        animation: show 1s both .5s;
-    }
+}
+
+#logo {
+    position: absolute;
+    left: 0;
+    z-index: 9;
+    width: 180px;
+    height: auto;
+    opacity: 0;
+    transform: translateX(-50%);
+    animation: show 1s both .5s;
+}
+
+#profile {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    border-radius: 10px;
+    z-index: 9;
+    transform: translateZ(0%) scale(20);
+    filter: blur(10000px);
+    transform-style: filter 1s ease;
+    animation: imagePresentation 1s both .5s;
+    mask-image: linear-gradient(black 80%, transparent);
     
-    >img:nth-child(2) {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: 0px;
-        border-radius: 10px;
-        z-index: 9;
-         transform: translateZ(0%) scale(20);
-        filter: blur(10000px);
-        transform-style: filter 1s ease;
-        animation: imagePresentation 1s both .5s;
-        mask-image: linear-gradient(black 80%, transparent);
-        
-    }
 }
 
 
