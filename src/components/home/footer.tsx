@@ -23,7 +23,7 @@ export default function Footer({ days_one }: { days_one: any }) {
             </nav>
             <div>
                 <button style={{ color: "white", display: "flex", alignItems: "center", flexDirection: "column" }}>
-                    <Image src={"/images/pdf.webp"} width={24} height={24} alt={"cv pdf icon"} />
+                    <Image src={"/imgs/pdf.webp"} width={24} height={24} alt={"cv pdf icon"} />
                     {"CV"}
                 </button>
                 <div>

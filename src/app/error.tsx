@@ -1,6 +1,7 @@
 'use client' // Error components must be Client Components
 
 import Image from "next/image";
+import error404 from "../../public/imgs/homero_simpsons_404_edi.webp"
 export default function Error({
     error,
     reset,
@@ -11,7 +12,7 @@ export default function Error({
 
     return (
         <div>
-            <Image src={"/images/homero_simpsons_404_edi.webp"} width={"100"} height={"100"} alt={"image error 404"} />
+            <Image src={error404} width={3264} height={3264} alt={"image error 404"} />
             <h2>Something went wrong!</h2>
             <button
                 onClick={

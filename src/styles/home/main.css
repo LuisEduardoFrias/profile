@@ -3,7 +3,6 @@
     height: 100%;
     border-radius: inherit;
     background-color: transparent;
-    perspective: 1000px;
     
     >div {
         visibility: hidden;
@@ -28,6 +27,7 @@
         height: inherit;
         padding: 15px;
         z-index: 1;
+        border-radius: 10px 10px;
         mask-image: linear-gradient(black 20%, transparent);
         background-color: #00207393;
         
@@ -40,11 +40,11 @@
     
     >img:first-child {
         position: absolute;
+        left: 0;
         z-index: 9;
-        opacity: 0;
         width: 180px;
         height: auto;
-        left: 0;
+         opacity: 0;
         transform: translateX(-50%);
         animation: show 1s both .5s;
     }
@@ -55,14 +55,16 @@
         height: 100%;
         bottom: 0px;
         border-radius: 10px;
-        transform: translateZ(0%) scale(20);
         z-index: 9;
+         transform: translateZ(0%) scale(20);
         filter: blur(10000px);
         transform-style: filter 1s ease;
         animation: imagePresentation 1s both .5s;
         mask-image: linear-gradient(black 80%, transparent);
+        
     }
 }
+
 
 @keyframes show {
     to {

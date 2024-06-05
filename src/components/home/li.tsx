@@ -10,18 +10,8 @@ export type Option = {
     href: string;
 };
 
-export default function Li(
-    {
-        src,
-        alt,
-        name,
-        href
-    }: {
-        src: string;
-        alt: string;
-        name: string;
-        href: string;
-    }): ReactElement {
+export default function Li({ src, alt, name, href }: Option): ReactElement {
+
     return (
         <li>
             <Link href={href}>
