@@ -12,25 +12,23 @@ type BookContainerProps = {
 
 const BookContainer: React.FC<BookContainerProps> = ({ children }) => {
     return (
-        <div className={Styles.backContainerHome}>
-            <section className={Styles.containerHome}>
-                {
-                    Array.isArray(children) ?
-                        (
-                            <>
-                                {
-                                    React.Children.map(children, (child, index: number) =>
-                                        <article key={index} className={`${index % 2 !== 0 ? Styles.sheetRight : Styles.sheetLeft}`}>
-                                            {child || null}
-                                        </article>
-                                    )
-                                }
-                            </>
-                        )
-                        : <>{children}</>
-                }
-            </section>
-        </div>
+        <>
+            {
+                Array.isArray(children) ?
+                    (
+                        <>
+                            {
+                                React.Children.map(children, (child, index: number) =>
+                                    <article key={index} className={`${index % 2 !== 0 ? Styles.sheetRight : Styles.sheetLeft}`}>
+                                        {child || null}
+                                    </article>
+                                )
+                            }
+                        </>
+                    )
+                : <>{children}</>
+            }
+        </>
     );
 }
 

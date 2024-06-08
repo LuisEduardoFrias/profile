@@ -1,5 +1,6 @@
 /**/
 .footer-container {
+    grid-area: footer;
     position: relative;
     height: 120px;
     
@@ -126,6 +127,23 @@
     
 }
 
+.icon-refresh {
+    animation: refresh-rotate 2s ease-in-out infinite;
+}
+
+@keyframes refresh-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.footer-container>div .downloadPdfBtn {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
 .footer-container>div:last-child {
     position: absolute;
     bottom: 10px;
