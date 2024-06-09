@@ -41,7 +41,7 @@
     >div {
         grid-area: paragraf;
         height: 130px;
-        overflow: scroll;
+        overflow: hidden;
         
         p {
             font-size: .84rem;

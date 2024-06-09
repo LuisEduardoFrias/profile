@@ -11,11 +11,12 @@ export type Option = {
 };
 
 export default function Li({ src, alt, name, href }: Option): ReactElement {
-
+    const DynamicComponent = require(`../../svg/${src}.tsx`).default;
+   
     return (
         <li>
             <Link href={href}>
-                <Image src={src} width={24} height={24} alt={alt} />
+                <DynamicComponent />
                 <p className='tooltip'>{name}</p>
             </Link>
         </li>

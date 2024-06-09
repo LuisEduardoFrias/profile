@@ -58,19 +58,15 @@
                     height: 100%;
                     border-radius: 5px;
                     overflow: hidden;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
                     color: var(--font-color);
                     text-decoration-color: var(--font-color);
                     background-color: transparent;
                     -webkit-tap-highlight-color: transparent;
-                    padding: 8px;
+                    padding: 2px;
                     
-                    img {
-                        width: 18px;
-                        height: 18px;
-                    }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     
                     p {
                         font-style: italic;
@@ -135,6 +131,16 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+.social-footer {
+    width: 100px;
+    height: 30px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .footer-container>div .downloadPdfBtn {

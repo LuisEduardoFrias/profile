@@ -1,4 +1,3 @@
-/** @format */
 import Image from 'next/image'
 import profile from "../../../public/imgs/profile.webp"
 import logo from "../../../public/imgs/tridente_sc.webp"

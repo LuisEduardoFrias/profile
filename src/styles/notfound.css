@@ -1,0 +1,58 @@
+
+.page-not-found {
+    --color: var(--blue-4th);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 920px;
+    height: 100%;
+    padding-inline: 20px;
+    padding-block-start: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    
+    > div {
+        background-color: var(--color);
+        margin-block-end: 20px;
+        padding-inline: 10px;
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        
+        > h2 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        > .link {
+            cursor: pointer;
+            color: var(--color);
+            font-size: 30px;
+            font-weight: 900;
+            border: 1px solid #171717;
+            background-color: black;
+            border-radius: 5px;
+            padding: 6px;
+            
+        }
+        
+        > .link:hovers {
+            transform: scale(1.1);
+        }
+        
+        > .link:active {
+            transform: scale(.5);
+        }
+        
+    }
+}
