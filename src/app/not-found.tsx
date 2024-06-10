@@ -15,7 +15,7 @@ export default function NotFoundPage({
     return (
     <div className="page-not-found" >
       <Image
-        prioriñty={true}
+        priority={true}
         placeholder="blur"
         className="error-404"
         src={error404}

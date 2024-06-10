@@ -20,7 +20,7 @@ const Slider: React.FC<SliderProps> = ({ children }) => {
   };
 
   useEffect(() => {
-    let interval;
+    let interval: NodeJS.Timeout;
     
     if (isAutoSlide) {
       interval = setInterval(() => {

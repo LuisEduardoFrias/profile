@@ -26,7 +26,7 @@ export default function Skills() {
             <Meteors />
             <BookContainer>
                 <div className="sheet-container">
-                    <Slider animation="cubeAnimation">
+                    <Slider>
                         <BackEnd />
                         <FrontEnd />
                         <Other />
