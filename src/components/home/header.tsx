@@ -1,10 +1,13 @@
 /** @format */
 
 import localFont from "next/font/local";
+import Meteors from 'cp/meteors'
 import "st/home/header.css";
 
 export default function Header({ days_one }: { days_one: any }) {
     return (
+        <>
+            <Meteors />
         <header className={`${days_one.className} header-container `}>
             <h1>Hola! soy <strong>Luis Eduardo</strong> programador</h1>
             <h2>BackEnd y FrontEnd</h2>
@@ -22,5 +25,6 @@ export default function Header({ days_one }: { days_one: any }) {
                 </p>
             </div>
         </header>
+        </>
     );
 }

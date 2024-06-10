@@ -1,19 +1,19 @@
 /** @format */
-/*
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*/
+
 
 :root {
     --blue-0: #0093fa;
     --blue-1st: #000a61;
     --blue-2nd: #0b40a8;
     --blue-3rd: #31ddff;
-    --blue-4th: #00207393;
+    --blue-4th: #1656ff;
     --rose-1st: #86002b;
     --rose-2nd: #e55d8a;
-    --rose-3rd: #e11e5e;
+    --rose-3rd: #e11e5e
+    
     
     --font-color: #ffffff;
     --border-color: #ffffff;
@@ -28,6 +28,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: var(--font-color);
 }
 
 body {

@@ -15,7 +15,9 @@ export default function NotFoundPage({
     return (
     <div className="page-not-found" >
       <Image
-        style={{ width: "400px", height: "400px" }}
+        prioriñty={true}
+        placeholder="blur"
+        className="error-404"
         src={error404}
         width={500}
         height={500}

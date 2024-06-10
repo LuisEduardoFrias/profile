@@ -15,10 +15,10 @@ interface IIcon {
 
 export default function Icon({
     iconName,
-    fill = 0,
-    wght = 400,
-    grad = 0,
-    opsz = 48,
+    fill = 0,   //  0   - 1
+    wght = 100, //  100 - 700 
+    grad = -50, // -50  - 200
+    opsz = 20,  //  20  - 48
     className,
     dark = false,
     darkInactive = false

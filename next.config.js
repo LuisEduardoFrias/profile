@@ -10,6 +10,12 @@ const nextConfig = {
                 port: '',
                 pathname: '/Technology/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'raw.githubusercontent.com',
+                port: '',
+                pathname: '/pmndrs/zustand/main/**',
+            },
         ],
         formats: ['image/webp'],
         //  unoptimized: true,

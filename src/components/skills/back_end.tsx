@@ -1,38 +1,54 @@
+"use client"
+import { useState } from 'react'
+import Skills from '../../jsons/skills.json'
+import { Skill as Sk } from 'md/skill'
+import Image from 'next/image'
+import 'st/skills/back_end.css'
 
-import Skills from "../../jsons/skills.json";
-import Skill from "cp/skills/skill";
-import { Skill as Sk } from "md/skill";
-import "st/skills/back_end.css";
+type TDrawProps = { 
+    skill: Sk, 
+    index: number, 
+    selectInd: number, 
+    onclick:()=>void 
+}
 
-export function Draw({ skill, index }: { skill: Sk, index: number }) {
+export function Draw({ skill, index, selectInd, onclick}: TDrawProps) {
+    
+    const Styles = {
+        gridArea:`s${index+1}`, 
+    }
+
     return (
-        <div key={index} className="flex-1 flex-col">
-            <Skill {...skill} />
+        <div key={index} style={Styles} onClick={onclick} >
+            <div>
+              { skill.href && <Image src={skill.href} width={70} height={70} alt={skill.alt} />}
+              { skill.name && <span>{skill.name}</span> }
+            </div>
+            <div></div>
         </div>
     )
 }
 
 export default function BackEnd() {
-
+    const [selectInd, setSelect] = useState(-1)
+    
+    const skills = [...Skills.backend.advancedExperience, ...Skills.backend.middleExperience];
+    let count = skills.length;
+    count = count/2 === 0 ? count : count+1;
+    
+    const StyleGrid = {
+        gridTemplateColumns: `repeat(${count}, Calc(60px - 10px))`,
+        gridTemplateRows: `repeat(${count}, Calc(60px - 10px))`,
+    }
 
     return (
         <div className="backend-page">
             <h2>Back End</h2>
 
-            <div>
-                <span>Experiencia Avanzada</span>
-                <div>
-                    {
-                        Skills.backend.advancedExperience.map((e, index) => <Draw key={index} skill={e} index={index} />)
-                    }
-                </div>
-
-                <span>Experiencia Intermedia</span>
-                <div>
-                    {
-                        Skills.backend.middleExperience.map((e: Sk, index) => <Draw key={index} skill={e} index={index} />)
-                    }
-                </div>
+            <div style={StyleGrid}>
+                {
+                    skills.map((e: Sk, index) => <Draw key={index} selectInd={selectInd} onclick={()=> setSelect(index)} skill={e} index={index} />)
+                }
             </div>
         </div>
     )

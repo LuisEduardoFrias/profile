@@ -1,11 +1,10 @@
 
 .page-not-found {
-    --color: var(--blue-4th);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 920px;
+    width: 100%;
     height: 100%;
     padding-inline: 20px;
     padding-block-start: 20px;
@@ -16,8 +15,13 @@
     flex-direction: row;
     gap: 100px;
     
+    > .error-404 {
+        width: 400px;
+        height: 400px;
+    }
+    
     > div {
-        background-color: var(--color);
+        background-color: var(--blue-4th);
         margin-block-end: 20px;
         padding-inline: 10px;
         border-radius: 10px;
@@ -36,7 +40,7 @@
         
         > .link {
             cursor: pointer;
-            color: var(--color);
+            color: var(--blue-4th);
             font-size: 30px;
             font-weight: 900;
             border: 1px solid #171717;
@@ -55,4 +59,21 @@
         }
         
     }
+}
+
+@media (width <= 800px) {
+    .page-not-found {
+        width: 100%;
+        height: 800px;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        > .error-404 {
+            width: 100%;
+            height: auto;
+        }
+    }
+    
 }

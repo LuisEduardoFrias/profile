@@ -1,6 +1,7 @@
 
 import { ReactNode } from 'react'
 import type { Metadata } from 'next'
+import Meteors from 'cp/meteors'
 //import Resize from '../components/resize'
 import { Inter } from 'next/font/google'
 import 'st/globals.css'
@@ -26,6 +27,7 @@ export default function RootLayout({
             <body className={inter.className}>
                 {//<Resize />
                 }
+                <Meteors />
                 <div className="bodyContainer">
                     <div className={Styles.backContainerLayout}>
                         <div className={Styles.containerLayout}>

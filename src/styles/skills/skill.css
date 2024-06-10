@@ -1,18 +1,37 @@
 /**/
+
+.skill-title {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: 900;
+    background-color: rgba(218,218,218,0.3);
+    backdrop-filter: blur(2px);
+    padding: 3px 6px;
+    border-radius: 6px;
+    color: white;
+    z-index: 99;
+}
+
 .sheet-container {
     height: 100%;
-    width: 90%;
+    width: 100%;
+
     border-radius: inherit;
     padding: 10px;
     
     h2 {
+        font-size: 30px;
         text-align: center;
+        font-weight: bold;
         background: linear-gradient(180deg,
                 var(--theme-1st) 30%,
                 var(--theme-2nd) 40%,
                 var(--theme-3rd) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-block-end: 50px;
+        margin-block-end: 10px;
     }
 }
