@@ -5,11 +5,9 @@ import 'st/switch_language.css';
 
 type TSwith = { 
     text: [string, string],
-    className:string,
-    change: (value:boolean) => void
 }
 
-export default function SwitchLanguage({ text, change, className }: TSwith){
+export default function SwitchLanguage({ text}: TSwith){
     const [check, setCheck] = useState(true);
     const [show, setShow] = useState(false);
 
@@ -27,7 +25,7 @@ export default function SwitchLanguage({ text, change, className }: TSwith){
     };
 
     return (
-        <label className={`switch-language ${className}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <label className="switch-language" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <input type="checkbox" checked={check} onChange={handleChange} />
             <span className="slider-language">{check ? text[0] : text[1]}</span>
             {show && <Tooltip 

@@ -6,10 +6,6 @@ import 'st/switch_theme.css'
 export default function SwitchTheme() {
     const [show, setShow] = useState(false);
 
-    function handleChange() {
-        setCheck(!check);
-    }
-
     const handleMouseEnter = () => {
         setShow(true);
     };
