@@ -4,9 +4,12 @@ import Skills from '../../jsons/skills.json'
 import Skill from 'cp/skills/skill'
 import { Draw } from './back_end'
 import { Skill as Sk } from 'md/skill'
+import {language} from 'md/language'
+import { useSubscribeState } from '@/subscribe_state/index'
 import 'st/skills/back_end.css'
 
 export default function Other() {
+    const [state, dispatch] = useSubscribeState(["language"])
     const [selectInd, setSelect] = useState(-1)
     
     const skills = [...Skills.another.advancedExperience, ...Skills.another.middleExperience];
@@ -30,7 +33,7 @@ export default function Other() {
 
     return (
         <div className="backend-page">
-            <h2>Another</h2>
+            <h2>{state.language === language.en ? "Another" : "Otros"}</h2>
 
             <div style={StyleGrid}>
                 {

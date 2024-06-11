@@ -8,12 +8,13 @@
     flex-direction: column;
     align-items: center;
     
-    >nav {
+    > nav {
         position: static;
         width: 100%;
         height: 50px;
+        user-select: none;
         
-        ul {
+        > ul {
             position: inherit;
             width: 100%;
             height: 100%;
@@ -21,18 +22,20 @@
             padding: 5px;
             background-color: var(--theme-4th);
             box-shadow: inset 0 0 3px 1px var(--theme-2nd);
+            user-select: none;
             
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 20px;
             
-            li {
+            > li {
                 position: inherit;
                 animation: move 1s linear both;
                 width: 25px;
                 height: 25px;
                 cursor: pointer;
+                user-select: none;
                 
                 outline: none;
                 background-color: transparent;
@@ -52,7 +55,7 @@
                 justify-content: center;
                 align-items: center;
                 
-                a {
+                > a {
                     position: inherit;
                     width: 100%;
                     height: 100%;
@@ -63,22 +66,26 @@
                     background-color: transparent;
                     -webkit-tap-highlight-color: transparent;
                     padding: 2px;
+                    user-select: none;
                     
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     
-                    p {
+                    > p {
+                        user-select: none;
+                        color:white;
                         font-style: italic;
                         text-wrap: nowrap;
                     }
                 }
                 
-                .tooltip {
+                .footer_tooltip {
                     position: absolute;
                     bottom: 0;
-                    opacity: 1;
+                    opacity: 0;
                     visibility: hidden;
+                    padding-inline: 2px;
                     font-size: 6px;
                     border: 1px solid var(--border-color);
                     border-radius: 0;
@@ -110,7 +117,7 @@
             transform: scale(0.8);
         }
         
-        >:has(li:hover, a:hover) li:hover a:hover .tooltip {
+        >:has(li:hover, a:hover) li:hover a:hover .footer_tooltip {
             opacity: 1;
             visibility: visible;
             padding: 3px;
@@ -118,6 +125,7 @@
             border-radius: 3px;
             background-color: transparent;
             color: var(--font-2nd);
+            color: white;
         }
     }
     

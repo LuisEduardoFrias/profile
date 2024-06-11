@@ -7,6 +7,7 @@ import Icon from 'cp/icon'
 import MenuList from '../../jsons/manu_list.json'
 import Socials from '../../jsons/socials.json'
 import PdfSvg from '../../svg/pdf_svg'; 
+import { useSubscribeState } from '@/subscribe_state/index'
 import 'st/home/footer.css'
 
 type Social = {
@@ -16,6 +17,7 @@ type Social = {
 }
 
 export default function Footer({ days_one }: { days_one: any }) {
+    const [{language}, dispatch] = useSubscribeState(["language"])
     const [downloading, setDownloading] = useState(false);
 
     function handleDownload() {
@@ -35,7 +37,7 @@ export default function Footer({ days_one }: { days_one: any }) {
         <footer className="footer-container" >
             <nav className={days_one.className}>
                 <ul>
-                    {MenuList.map((li: Option, i: number) => <Li key={i} {...li} />)}
+                    {MenuList.map((li: Option, i: number) => <Li key={i} {...{...li, language: language}} />)}
                 </ul>
             </nav>
             <div>

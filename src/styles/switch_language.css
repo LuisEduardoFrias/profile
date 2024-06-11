@@ -16,7 +16,9 @@
   z-index: 999999;
   
   cursor: pointer;
-  background-color: #f4f4f5;
+  background-color: #303136;
+  border: 2px solid #303136;
+  border-radius: 20px;
   transition: .4s;
   border-radius: 30px;
   user-select: none;
@@ -49,6 +51,7 @@
     display: grid;
     place-content: center;
     font-weight: bold;
+    color: var(--font-color);
 }
 
 input:checked + .slider-language {

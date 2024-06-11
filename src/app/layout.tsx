@@ -1,4 +1,4 @@
-
+"use client"
 import { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import Meteors from 'cp/meteors'
@@ -6,21 +6,28 @@ import Meteors from 'cp/meteors'
 import { Inter } from 'next/font/google'
 import SwitchTheme from 'cp/swith_theme'
 import SwitchLanguage from 'cp/swith_language'
-import 'st/globals.css'
+
+import {language} from 'md/language'
+import {State} from 'md/state'
+import Reducer from '@/reducer/reducer'
+import useInitialize from '@/subscribe_state/index'
+
 import Styles from 'st/layout.module.css'
+import 'st/globals.css'
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+/*export const metadata: Metadata = {
     title: "Portafolio Luis E.F.",
     description: "Portafolio"
-};
+};*/
 
-export default function RootLayout({
-    children
-}: {
-    children: ReactNode;
-}) {
+const initial: State = {
+    language: language.en
+}
+
+export default function RootLayout({children}: {children: ReactNode}) {
+    useInitialize(Reducer, initial);
     return (
         <html lang='es'>
             <head>
@@ -31,7 +38,7 @@ export default function RootLayout({
                 }
                 <SwitchLanguage text={["EN","ES"]} />
                 <SwitchTheme />
-                <Meteors />
+                <Meteors className="layout-meteors" />
                 <div className="bodyContainer">
                     <div className={Styles.backContainerLayout}>
                         <div className={Styles.containerLayout}>

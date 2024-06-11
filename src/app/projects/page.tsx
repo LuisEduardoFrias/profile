@@ -49,9 +49,13 @@ function CardDescription({ children }: { children: React.ReactNode }) {
 
 export default function Projects() {
     return (
-        <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-            My Tech Stack
-        </h1>)
+        <div style={{color:"white", margin:"20px 0 0 20px", borderTop: "3px solid white", borderLeft:"3px solid white", borderRadius:"5px", padding:"5px 0 0 5px"}}>
+            <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+                Projects
+            </h1>
+            <h2>Coming soon</h2>
+        </div>
+    )
 }
 
 /*
@@ -124,11 +128,7 @@ Check out the projects I\'ve built using React.
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
 <Card>
 <CardHeader>
-<img
-src="/placeholder.svg"
-width="400"
-height="200"
-alt="Project"
+<img src="/placeholder.svg" width="400" height="200" alt="Project"
 className="rounded-t-lg object-cover"
 />
 </CardHeader>
@@ -136,8 +136,7 @@ className="rounded-t-lg object-cover"
 <CardTitle>React Dashboard</CardTitle>
 <CardDescription>A modern and responsive dashboard built with React.</CardDescription>
 <div className="flex justify-end">
-<Link
-href="#"
+<Link href="#"
 className="inline-flex h-8 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
 prefetch={false}
 >
@@ -148,11 +147,7 @@ View Project
 </Card>
 <Card>
 <CardHeader>
-<img
-src="/placeholder.svg"
-width="400"
-height="200"
-alt="Project"
+<img src="/placeholder.svg" width="400" height="200" alt="Project"
 className="rounded-t-lg object-cover"
 />
 </CardHeader>
@@ -160,8 +155,7 @@ className="rounded-t-lg object-cover"
 <CardTitle>React E-commerce</CardTitle>
 <CardDescription>A fully-featured e-commerce platform built with React.</CardDescription>
 <div className="flex justify-end">
-<Link
-href="#"
+<Link href="#"
 className="inline-flex h-8 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
 prefetch={false}
 >
@@ -172,11 +166,7 @@ View Project
 </Card>
 <Card>
 <CardHeader>
-<img
-src="/placeholder.svg"
-width="400"
-height="200"
-alt="Project"
+<img src="/placeholder.svg" width="400" height="200" alt="Project"
 className="rounded-t-lg object-cover"
 />
 </CardHeader>
@@ -184,8 +174,7 @@ className="rounded-t-lg object-cover"
 <CardTitle>React Portfolio</CardTitle>
 <CardDescription>A personal portfolio website built with React.</CardDescription>
 <div className="flex justify-end">
-<Link
-href="#"
+<Link href="#"
 className="inline-flex h-8 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
 prefetch={false}
 >
@@ -212,11 +201,7 @@ Check out the projects I\'ve built using Node.js.
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
 <Card>
 <CardHeader>
-<img
-src="/placeholder.svg"
-width="400"
-height="200"
-alt="Project"
+<img src="/placeholder.svg" width="400" height="200" alt="Project"
 className="rounded-t-lg object-cover"
 />
 </CardHeader>
@@ -224,8 +209,7 @@ className="rounded-t-lg object-cover"
 <CardTitle>Node.js API</CardTitle>
 <CardDescription>A RESTful API built with Node.js and Express.</CardDescription>
 <div className="flex justify-end">
-<Link
-href="#"
+<Link href="#"
 className="inline-flex h-8 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
 prefetch={false}
 >
@@ -236,11 +220,7 @@ View Project
 </Card>
 <Card>
 <CardHeader>
-<img
-src="/placeholder.svg"
-width="400"
-height="200"
-alt="Project"
+<img src="/placeholder.svg" width="400" height="200" alt="Project"
 className="rounded-t-lg object-cover"
 />
 </CardHeader>
@@ -248,8 +228,7 @@ className="rounded-t-lg object-cover"
 <CardTitle>Node.js Chat App</CardTitle>
 <CardDescription>A real-time chat application built with Node.js and Socket.IO.</CardDescription>
 <div className="flex justify-end">
-<Link
-href="#"
+<Link href="#"
 className="inline-flex h-8 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
 prefetch={false}
 >
@@ -260,11 +239,7 @@ View Project
 </Card>
 <Card>
 <CardHeader>
-<img
-src="/placeholder.svg"
-width="400"
-height="200"
-alt="Project"
+<img src="/placeholder.svg" width="400" height="200" alt="Project"
 className="rounded-t-lg object-cover"
 />
 </CardHeader>
@@ -272,8 +247,7 @@ className="rounded-t-lg object-cover"
 <CardTitle>Node.js CMS</CardTitle>
 <CardDescription>A content management system built with Node.js and Express.</CardDescription>
 <div className="flex justify-end">
-<Link
-href="#"
+<Link href="#"
 className="inline-flex h-8 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
 prefetch={false}
 >
@@ -305,9 +279,7 @@ function ArrowUpIcon(props) {
 return (
 <svg
 {...props}
-xmlns="http://www.w3.org/2000/svg"
-width="24"
-height="24"
+xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 viewBox="0 0 24 24"
 fill="none"
 stroke="currentColor"
@@ -326,9 +298,7 @@ function CodeIcon(props) {
 return (
 <svg
 {...props}
-xmlns="http://www.w3.org/2000/svg"
-width="24"
-height="24"
+xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 viewBox="0 0 24 24"
 fill="none"
 stroke="currentColor"
@@ -347,9 +317,7 @@ function EclipseIcon(props) {
 return (
 <svg
 {...props}
-xmlns="http://www.w3.org/2000/svg"
-width="24"
-height="24"
+xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 viewBox="0 0 24 24"
 fill="none"
 stroke="currentColor"
@@ -368,9 +336,7 @@ function LeafIcon(props) {
 return (
 <svg
 {...props}
-xmlns="http://www.w3.org/2000/svg"
-width="24"
-height="24"
+xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 viewBox="0 0 24 24"
 fill="none"
 stroke="currentColor"
@@ -389,9 +355,7 @@ function PyramidIcon(props) {
 return (
 <svg
 {...props}
-xmlns="http://www.w3.org/2000/svg"
-width="24"
-height="24"
+xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 viewBox="0 0 24 24"
 fill="none"
 stroke="currentColor"
@@ -410,9 +374,7 @@ function RedoDotIcon(props) {
 return (
 <svg
 {...props}
-xmlns="http://www.w3.org/2000/svg"
-width="24"
-height="24"
+xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 viewBox="0 0 24 24"
 fill="none"
 stroke="currentColor"
@@ -432,9 +394,7 @@ function ViewIcon(props) {
 return (
 <svg
 {...props}
-xmlns="http://www.w3.org/2000/svg"
-width="24"
-height="24"
+xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 viewBox="0 0 24 24"
 fill="none"
 stroke="currentColor"

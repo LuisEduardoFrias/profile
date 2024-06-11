@@ -16,7 +16,7 @@ export default function SwitchTheme() {
     
     return (
         <label className="switch-theme" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <input type="checkbox" defaultChecked={true} />
+            <input id="swith-cb-theme" type="checkbox" defaultChecked={false} defaultChecked={true} />
             <span className="slider-theme"></span>
             {show && <Tooltip 
                 text={"Control to change dark or light theme!"} 

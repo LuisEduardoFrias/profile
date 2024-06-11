@@ -32,9 +32,11 @@ export default function KeyBoard() {
 
     return (
         <div className="container-keyboard">
+            {/*
             <div className="keyboard-pronter">
                 <div style={{ ...animationStyles }} className="text">{text}</div>
             </div>
+            */}
             <div className="keyboard">
 
                 <div>

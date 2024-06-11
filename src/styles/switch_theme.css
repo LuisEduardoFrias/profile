@@ -14,6 +14,8 @@
   width: var(--width-of-switch-theme);
   height: var(--height-of-switch-theme);
   z-index: 999999;
+  border: 2px solid #303136;
+  border-radius: 20px;
   user-select: none;
 }
 
@@ -32,7 +34,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #f4f4f5;
+  background-color: #303136;
   transition: .4s;
   border-radius: 30px;
 }
@@ -40,24 +42,25 @@
 .slider-theme:before {
   position: absolute;
   content: "";
+  top: 10%;
+  transition: .4s;
   height: var(--size-of-icon,1.4em);
   width: var(--size-of-icon,1.4em);
   border-radius: 20px;
-  left: var(--slider-offset,0.3em);
-  top: 50%;
-  transform: translateY(-50%);
-  background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
-  ;
- transition: .4s;
+
+  left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
 
 input:checked + .slider-theme {
-  background-color: #303136;
+  background-color: #f4f4f5;
 }
 
 input:checked + .slider-theme:before {
-  left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
-  background: #303136;
-  /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
-  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+  box-shadow: inset 0px 0px 0px 0px #fdfdfd, inset 0px 0px 0 0 #f9f9f9;
+  top: 50%;
+  transform: translateY(-50%);
+  left: var(--slider-offset,0.3em);
+  background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
 }

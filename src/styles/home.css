@@ -6,8 +6,9 @@
     
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 120px;
+    grid-template-rows: 320px 130px;
     grid-template-areas: "header" "footer";
+    grid-row-gap: 5px;
 }
 
 .swipe_up {

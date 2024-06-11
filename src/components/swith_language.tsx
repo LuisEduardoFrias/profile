@@ -1,6 +1,8 @@
 "use client"
 import { useState } from 'react';
 import Tooltip, { arrow } from 'cp/tooltip';
+import {language} from 'md/language'
+import { useSubscribeState } from '@/subscribe_state/index'
 import 'st/switch_language.css';
 
 type TSwith = { 
@@ -8,12 +10,13 @@ type TSwith = {
 }
 
 export default function SwitchLanguage({ text}: TSwith){
+    const [state, dispatch] = useSubscribeState(["language"])
     const [check, setCheck] = useState(true);
     const [show, setShow] = useState(false);
 
     function handleChange() {
+        dispatch({type: "ChangeLanguage", language: check ? language.es : language.en});
         setCheck(!check);
-        //change(!check);
     }
 
     const handleMouseEnter = () => {

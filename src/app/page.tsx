@@ -1,4 +1,4 @@
-//
+"use client"
 import Header from "cp/home/header";
 import Main from "cp/home/main";
 import Footer from "cp/home/footer";
@@ -15,7 +15,7 @@ export default function Home() {
     return (
         <BookContainer>
             <div className="sheet-left">
-                <Icon iconName="swipe_up" className="swipe_up" />
+                <Icon iconName="swipe_up" wght={700} grad={200} fill="1" className="swipe_up" />
                 <Header days_one={days_one} />
                 <Footer days_one={days_one} />
             </div>

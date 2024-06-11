@@ -1,14 +1,17 @@
 "use client"
-import BookContainer, { Pages } from "cp/book_container";
-import BackButton from "cp/back_button";
-import Keyboard from "cp/keyboard";
-import FrontEnd from "cp/skills/front_end";
-import BackEnd from "cp/skills/back_end";
-import Other from "cp/skills/other";
+import BookContainer, { Pages } from 'cp/book_container'
+import BackButton from 'cp/back_button'
+import Keyboard from 'cp/keyboard'
+import FrontEnd from 'cp/skills/front_end'
+import BackEnd from 'cp/skills/back_end'
+import Other from 'cp/skills/other'
+import Typing from 'cp/skills/typing'
 import Meteors from 'cp/meteors'
-import Icon from "cp/icon"
-import localFont from "next/font/local";
-import Slider from '../../components/slider'
+import Icon from 'cp/icon'
+import Slider from 'cp/slider'
+import localFont from 'next/font/local'
+import {language} from 'md/language'
+import { useSubscribeState } from '@/subscribe_state/index'
 
 //import { Slide, Fade, Zoom } from 'react-slideshow-image';
 //import 'react-slideshow-image/dist/styles.css';
@@ -20,12 +23,15 @@ const days_one = localFont({
 });
 
 export default function Skills() {
+    const [state, dispatch] = useSubscribeState(["language"])
+    const title = state.language === language.en ? "</Skills>":"Habilidades";
     return (
         <>
-            <h1 className={`${days_one.className} skill-title`}>{"</ Skills >"}</h1>
+            <h1 className={`${days_one.className} skill-title`}>{title}</h1>
             <Meteors />
             <BookContainer>
                 <div className="sheet-container">
+                    <BackButton />
                     <Slider>
                         <BackEnd />
                         <FrontEnd />
@@ -33,13 +39,9 @@ export default function Skills() {
                     </Slider>
                 </div>
                 <div className="sheet-container">
-                    <Other2 />
+                    <Typing />
                 </div>
             </BookContainer>
         </>
     )
-}
-
-function Other2() {
-    return (<div style={{ width: "100%", height: "100%", display: "grid", placeContent: "center" }}> <Keyboard /></div >)
 }
