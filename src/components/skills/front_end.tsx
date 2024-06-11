@@ -14,8 +14,8 @@ export default function FrontEnd() {
     count = count/2 === 0 ? count : count+1;
 
     const StyleGrid = {
-        gridTemplateColumns: `repeat(${count}, Calc(60px - 10px))`,
-        gridTemplateRows:  `repeat(${count}, Calc(60px - 10px))`,
+        gridTemplateColumns: `repeat(${12}, Calc(60px - 10px))`,
+        gridTemplateRows:  `repeat(${8}, Calc(60px - 10px))`,
         gridTemplateAreas:
          `" s1 s1 s3 s3 s3 s7 s7 s10 s10 s10 s13 s13 " 
           " s1 s1 s3 s3 s3 s7 s7 s10 s10 s10 s13 s13 " 
@@ -24,7 +24,8 @@ export default function FrontEnd() {
           " s4 s4 s19 s6 s6 s6 s9 s9  s12 s12 s17 s17 " 
           " s4 s4 s19 s6 s6 s6 s9 s9  s12 s12 s17 s17 "
           " s20 s20 s15 s15 s14 s14 s14 s8 s8 s16 s16 s16 "
-          " s20 s20 s15 s15 s14 s14 s14 s8 s8 s16 s16 s16  "`
+          " s20 s20 s15 s15 s14 s14 s14 s8 s8 s16 s16 s16  "`,
+          overflow:"scroll"
     }
 
     return (

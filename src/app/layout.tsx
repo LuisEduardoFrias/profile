@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import Meteors from 'cp/meteors'
 //import Resize from '../components/resize'
 import { Inter } from 'next/font/google'
+import SwitchTheme from 'cp/swith_theme'
+import SwitchLanguage from 'cp/swith_language'
 import 'st/globals.css'
 import Styles from 'st/layout.module.css'
 
@@ -27,6 +29,8 @@ export default function RootLayout({
             <body className={inter.className}>
                 {//<Resize />
                 }
+                <SwitchLanguage text={["EN","ES"]} />
+                <SwitchTheme />
                 <Meteors />
                 <div className="bodyContainer">
                     <div className={Styles.backContainerLayout}>

@@ -14,17 +14,18 @@ export default function Other() {
     count = count/2 === 0 ? count : count+1;
     
     const StyleGrid = {
-        gridTemplateColumns: `repeat(${count}, Calc(60px - 10px))`,
-        gridTemplateRows: `repeat(${count}, Calc(60px - 10px))`,
+        gridTemplateColumns: `repeat(${12}, Calc(60px - 10px))`,
+        gridTemplateRows: `repeat(${8}, Calc(60px - 10px))`,
         gridTemplateAreas:
          `" s1 s1 s3 s3 s3 s7 s7 s10 s10 s10 s13 s13 " 
           " s1 s1 s3 s3 s3 s7 s7 s10 s10 s10 s13 s13 " 
           " s1 s1 s2 s2 s5 s5 s9 s9  s11 s11 s18 s18 " 
-          " s4 s4 s2 s2 s5 s5 s9 s9  s11 s11 s18 s18 " 
-          " s4 s4 s19 s6 s6 s6 s9 s9  s12 s12 s17 s17 " 
-          " s4 s4 s19 s6 s6 s6 s9 s9  s12 s12 s17 s17 "
-          " s20 s20 s15 s15 s14 s14 s14 s8 s8 s16 s16 s16 "
-          " s20 s20 s15 s15 s14 s14 s14 s8 s8 s16 s16 s16  "`
+          " s20 s20 s2 s2 s5 s5 s9 s9  s11 s11 s18 s18 " 
+          " s4 s4 s4 s6 s6 s6 s9 s9  s12 s12 s17 s17 " 
+          " s4 s4 s4 s6 s6 s6 s9 s9  s12 s12 s17 s17 "
+          " s19 s19 s15 s15 s14 s14 s14 s8 s8 s16 s16 s16 "
+          " s19 s19 s15 s15 s14 s14 s14 s8 s8 s16 s16 s16  "`,
+          overflow:"scroll"
     }
 
     return (
