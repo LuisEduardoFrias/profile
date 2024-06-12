@@ -36,7 +36,7 @@ export default function Tooltip({text, point, hide, time = 1000, t_arrow=arrow.c
         return () => {
             clearTimeout(timer);
         };
-    }, []);
+    }, [time, hide]);
     
     const Styles = {
         top:`${point.y}px`,

@@ -1,12 +1,14 @@
 /** @format */
 
-import localFont from "next/font/local";
+import localFont from 'next/font/local'
 import Meteors from 'cp/meteors'
+import {language} from 'md/language'
+import {State} from 'md/state'
 import { useSubscribeState } from '@/subscribe_state/index'
-import "st/home/header.css";
+import 'st/home/header.css'
 
 export default function Header({ days_one }: { days_one: any }) {
-    const [{language}, dispatch] = useSubscribeState(["language"])
+    const [{language: lg}, dispatch] = useSubscribeState<State>(["language"])
     
     const text = {
         text1:{ES:"Hola! soy",EN:" Hello! I'm"},
@@ -20,17 +22,20 @@ export default function Header({ days_one }: { days_one: any }) {
         <>
         <Meteors />
         <header className={`${days_one.className} header-container `}>
-            <h1>{text.text1[language]} <strong>Luis Eduardo</strong> {text.text2[language]}</h1>
+            <h1>{text.text1[lg as language]} 
+                <strong>Luis Eduardo</strong> 
+            {text.text2[lg as language]}</h1>
+            
             <h2>BackEnd y FrontEnd</h2>
             <div>
                 <p>
-                    {text.text3[language]}
+                    {text.text3[lg as language]}
                     <strong> C#</strong>
                 </p>
                 <p>
-                    {text.text4[language]}
+                    {text.text4[lg as language]}
                     <strong>React</strong>
-                    {text.text5[language]}
+                    {text.text5[lg as language]}
                 </p>
             </div>
         </header>

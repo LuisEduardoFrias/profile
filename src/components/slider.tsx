@@ -42,7 +42,7 @@ export default function Slider({ children }: SliderProps) {
           }, 5000);
         }
         return () => clearInterval(interval);
-    }, [currentSlide, isAutoSlide]);
+    }, [currentSlide, isAutoSlide, nextSlide]);
 
     return (
         <div className="slider">

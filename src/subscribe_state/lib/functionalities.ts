@@ -13,7 +13,7 @@ import { ALL, SUB_CRIBER } from "./constants";
 import { Initialize } from "./initialize_super_state";
 
 //exact comparison of two objects
-function equal(obj1: GlobalState, obj2: GlobalState) {
+function equal<T>(obj1: T, obj2: T) {
     return JSON.stringify(obj1) === JSON.stringify(obj2);
 }
 
@@ -39,16 +39,16 @@ export function subCribe(
 }
 
 //intermediator of the dispatch
-export function middleDistpach(action: Action, reducer: Reducer): void {
+export function middleDistpach<T>(action: Action, reducer: Reducer): void {
     //
-    const initialized = Initialize.getInstance();
+    const initialized = Initialize.getInstance<T>();
 
-    const newState: GlobalState = reducer(
+    const newState: T = reducer<T>(
         initialized.globalState,
         action
     );
 
-    const changedProperties: string[] = getChangedProperties(
+    const changedProperties: (keyof T)[] = getChangedProperties<T>(
         initialized.globalState,
         newState
     );
@@ -57,25 +57,20 @@ export function middleDistpach(action: Action, reducer: Reducer): void {
 
     //Probocar el cambio de estado en los useReducers de los suscriptores.
     if (changedProperties.length > 0) {
-        Reflect.ownKeys(SUB_CRIBER).forEach((key: string) => {
-            //console.log(`sub ${key}`)
+        const fn = (key: string | symbol) => {
 
             const props = Reflect.get(SUB_CRIBER, key).props;
 
             for (let i = 0; i < props.length; i++) {
-                //console.log(`props: ${props} - ${i}`)
 
                 let isBreak = false;
 
                 for (let j = 0; j < changedProperties.length; j++) {
 
-                    //console.log(`ch-p: ${changedProperties} - ${j}`)
-
                     if (changedProperties[j] === props[i] || changedProperties[j] === ALL) {
 
-                        //console.log("isBreak")
                         const promesa = new Promise((resolve, reject) => {
-                            SUB_CRIBER[key].dispatch({ type: "any" })
+                            SUB_CRIBER[key as string].dispatch({ type: "any" })
                             resolve(true);
                         });
                         promesa.then((property) => { });
@@ -90,30 +85,30 @@ export function middleDistpach(action: Action, reducer: Reducer): void {
                     break;
                 }
             }
-        })
+        }
+        
+        Reflect.ownKeys(SUB_CRIBER).forEach(fn);
     }
 }
 
-//retorna las propiedades que an sido actializadas.
-function getChangedProperties(
-    oldState: GlobalState,
-    newState: GlobalState
-): string[] {
-    const changedProperties: string[] = [];
-    for (const key in newState) {
+function getChangedProperties<T>(oldState: T, newState: T): (keyof T)[] {
+    const changedProperties: (keyof T)[] = [];
+    
+    for (const key of Object.keys(newState as object) as (keyof T)[]) {
         if (!equal(oldState[key], newState[key])) {
             changedProperties.push(key);
         }
     }
+    
     return changedProperties;
 }
 
 //returns the state with the specific properties of a subscriber
-export function returnStateForSubscribe(
-    state: GlobalState,
+export function returnStateForSubscribe<T>(
+    state: T,
     callerFunction: string
-): GlobalState {
-    const newState: GlobalState = {};
+): T {
+    let newState = {};
 
     if (SUB_CRIBER[callerFunction]) {
         const pros: string[] = SUB_CRIBER[callerFunction].props;
@@ -121,9 +116,9 @@ export function returnStateForSubscribe(
         for (let i: number = 0; i < pros.length; i++) {
             if (pros[i] === ALL) return state;
 
-            setObj(newState, pros[i], state[pros[i]]);
+            setObj(newState, pros[i], state[ pros[i] as keyof T]);
         }
     }
 
-    return newState;
+    return newState as T;
 }

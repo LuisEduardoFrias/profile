@@ -7,12 +7,13 @@ import Link from "next/link";
 export type Option = {
     src: string;
     alt: string;
-    name: [string, string];
+    name: string[];
     href: string;
-    language: typeof language;
 };
 
-export default function Li({ src, alt, name, href, language : lg}: Option): ReactElement {
+type TLiProps = Option & {language: language};
+
+export default function Li({ src, alt, name, href, language : lg}: TLiProps): ReactElement {
     const DynamicComponent = require(`../../svg/${src}.tsx`).default;
    
     return (

@@ -1,10 +1,11 @@
 import KeyBoard from 'cp/keyboard'
 import {language} from 'md/language'
+import {State} from 'md/state'
 import { useSubscribeState } from '@/subscribe_state/index'
 import 'st/skills/typing.css'
 
 export default function Typing() {
-    const [state, dispatch] = useSubscribeState(["language"])
+    const [state, dispatch] = useSubscribeState<State>(["language"])
     const text = state.language === language.es ? "La programación es el arte de crear instrucciones para que las computadoras realicen tareas específicas. Con código, los programadores dan vida a programas y aplicaciones que mejoran nuestra interacción con la tecnología." : "Programming is the art of creating instructions for computers to perform specific tasks. With code, programmers bring programs and applications to life that enhance our interaction with technology."
     
     return (

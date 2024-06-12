@@ -11,6 +11,7 @@ import Icon from 'cp/icon'
 import Slider from 'cp/slider'
 import localFont from 'next/font/local'
 import {language} from 'md/language'
+import {State} from 'md/state'
 import { useSubscribeState } from '@/subscribe_state/index'
 
 //import { Slide, Fade, Zoom } from 'react-slideshow-image';
@@ -23,7 +24,7 @@ const days_one = localFont({
 });
 
 export default function Skills() {
-    const [state, dispatch] = useSubscribeState(["language"])
+    const [state, dispatch] = useSubscribeState<State>(["language"])
     const title = state.language === language.en ? "</Skills>":"Habilidades";
     return (
         <>

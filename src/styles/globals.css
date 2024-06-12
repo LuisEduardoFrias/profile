@@ -65,6 +65,10 @@ body:has(#swith-cb-theme:checked) {
     --border-width: 2px;
 }
 
+body:has(#swith-cb-theme:checked) .skill-title {
+    background-color: rgba(41,41,41,0.3);
+}
+
 body:has(#swith-cb-theme:checked) #svg {
   fill: black;
 }

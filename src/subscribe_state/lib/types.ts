@@ -24,7 +24,7 @@ export type GlobalState = {
     [key: string]: any;
 };
 
-export type Reducer = (state: GlobalState, action: Action) => GlobalState;
+export type Reducer = <T>(state: T, actions: any) => T;
 
 export type AnyObject = {
     [key: string]: any;

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Li, { Option } from './li'
 import Icon from 'cp/icon'
+import {State} from 'md/state'
 import MenuList from '../../jsons/manu_list.json'
 import Socials from '../../jsons/socials.json'
 import PdfSvg from '../../svg/pdf_svg'; 
@@ -17,7 +18,7 @@ type Social = {
 }
 
 export default function Footer({ days_one }: { days_one: any }) {
-    const [{language}, dispatch] = useSubscribeState(["language"])
+    const [{language}, dispatch] = useSubscribeState<State>(["language"])
     const [downloading, setDownloading] = useState(false);
 
     function handleDownload() {
@@ -37,7 +38,7 @@ export default function Footer({ days_one }: { days_one: any }) {
         <footer className="footer-container" >
             <nav className={days_one.className}>
                 <ul>
-                    {MenuList.map((li: Option, i: number) => <Li key={i} {...{...li, language: language}} />)}
+                    {MenuList.map((li: Option, i: number) => <Li key={i} {...li} language={language} />)}
                 </ul>
             </nav>
             <div>

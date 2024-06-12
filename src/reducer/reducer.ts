@@ -4,7 +4,7 @@ import {State} from 'md/state'
 type Action =
     { type: "ChangeLanguage", language: typeof language };
 
-export default function Reducer(state:State, actions: Action) {
+export default function Reducer<T>(state:T, actions: Action) {
     const _actions = {
         ChangeLanguage: () => {
             return {...state, language: actions.language}

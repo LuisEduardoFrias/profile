@@ -15,7 +15,7 @@ export default function Home() {
     return (
         <BookContainer>
             <div className="sheet-left">
-                <Icon iconName="swipe_up" wght={700} grad={200} fill="1" className="swipe_up" />
+                <Icon iconName="swipe_up" wght={700} grad={200} fill={1} className="swipe_up" />
                 <Header days_one={days_one} />
                 <Footer days_one={days_one} />
             </div>

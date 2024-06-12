@@ -4,12 +4,13 @@ import Skills from '../../jsons/skills.json'
 import Skill from 'cp/skills/skill'
 import { Draw } from './back_end'
 import { Skill as Sk } from 'md/skill'
+import { State } from 'md/state'
 import {language} from 'md/language'
 import { useSubscribeState } from '@/subscribe_state/index'
 import 'st/skills/back_end.css'
 
 export default function Other() {
-    const [state, dispatch] = useSubscribeState(["language"])
+    const [state, dispatch] = useSubscribeState<State>(["language"])
     const [selectInd, setSelect] = useState(-1)
     
     const skills = [...Skills.another.advancedExperience, ...Skills.another.middleExperience];

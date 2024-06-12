@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Tooltip, { arrow } from 'cp/tooltip';
 import {language} from 'md/language'
+import {State} from 'md/state'
 import { useSubscribeState } from '@/subscribe_state/index'
 import 'st/switch_language.css';
 
@@ -10,7 +11,7 @@ type TSwith = {
 }
 
 export default function SwitchLanguage({ text}: TSwith){
-    const [state, dispatch] = useSubscribeState(["language"])
+    const [state, dispatch] = useSubscribeState<State>(["language"])
     const [check, setCheck] = useState(true);
     const [show, setShow] = useState(false);
 

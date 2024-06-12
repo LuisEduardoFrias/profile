@@ -1,6 +1,6 @@
 
 import { useReducer, useEffect } from "react";
-import { Action, GlobalState, Dispatch } from "./types";
+import { Action, Dispatch } from "./types";
 import { subCribe, middleDistpach, returnStateForSubscribe } from "./functionalities";
 import { Initialize } from "./initialize_super_state";
 
@@ -8,15 +8,15 @@ type ObjReducer = {
     value: number;
 };
 
-export default function useSubscribeState(
+export default function useSubscribeState<T>(
     props: string[] = [],
     postDispatch?: (
         action: Action,
-        state: object,
+        state: T,
         dispatch: (action: Action) => void
     ) => void
-): [GlobalState, Dispatch] {
-    const initialized = Initialize.getInstance();
+): [T, Dispatch] {
+    const initialized = Initialize.getInstance<T>();
 
     //reducer
     function reducer(state: ObjReducer, action: Action): any {
@@ -30,14 +30,13 @@ export default function useSubscribeState(
         new Error().stack?.split("\n")[2].trim().split(" ")[1] ??
         "crypto.randomUUID";
 
-
     useEffect(() => {
         //subscribe the component
     }, [props, callerFunction, dispatch])
+    
     subCribe(props, callerFunction, (action: Action) => {
         dispatch(action);
     });
-
 
     //Check if a dispatch is added to execute before the execution continues.
     function outDispatch(action: Action) {
@@ -54,7 +53,7 @@ export default function useSubscribeState(
         }
     }
 
-    return [returnStateForSubscribe(initialized.globalState, callerFunction), outDispatch];
+    return [returnStateForSubscribe<T>(initialized.globalState, callerFunction), outDispatch];
 }
 
 export function dispatch(action: Action) {
