@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback} from 'react'
 import Icon from './icon'
 import 'st/slider.css'
 
@@ -11,9 +11,9 @@ export default function Slider({ children }: SliderProps) {
     const [isAutoSlide, setIsAutoSlide] = useState(true);
     const totalSlides = children.length;
 
-    const nextSlide = () => {
+    const nextSlide = useCallback(() => {
         setCurrentSlide((currentSlide + 1) % totalSlides);
-    };
+    },[currentSlide, totalSlides])
 
     const prevSlide = () => {
         setCurrentSlide((currentSlide - 1 + totalSlides) % totalSlides);

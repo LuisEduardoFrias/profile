@@ -1,7 +1,6 @@
 "use client"
 import BookContainer, { Pages } from 'cp/book_container'
 import BackButton from 'cp/back_button'
-import Keyboard from 'cp/keyboard'
 import FrontEnd from 'cp/skills/front_end'
 import BackEnd from 'cp/skills/back_end'
 import Other from 'cp/skills/other'

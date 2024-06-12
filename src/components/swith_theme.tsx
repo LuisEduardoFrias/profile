@@ -1,11 +1,17 @@
 "use client"
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
+import useLocalStorage from 'hk/use_local_storage'
 import Tooltip, { arrow } from 'cp/tooltip';
 import 'st/switch_theme.css'
 
 export default function SwitchTheme() {
     const [show, setShow] = useState(false);
+    const [{isDark}, setTheme] = useLocalStorage('theme', { isDark: false });
 
+    function handleChange(event: ChangeEvent<HTMLInputElement>) {
+        setTheme({isDark: event.target.checked})
+    }
+    
     const handleMouseEnter = () => {
         setShow(true);
     };
@@ -16,7 +22,7 @@ export default function SwitchTheme() {
     
     return (
         <label className="switch-theme" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <input id="swith-cb-theme" type="checkbox" defaultChecked={true} />
+            <input id="swith-cb-theme" type="checkbox" defaultChecked={isDark} onChange={handleChange} />
             <span className="slider-theme"></span>
             {show && <Tooltip 
                 text={"Control to change dark or light theme!"} 

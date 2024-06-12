@@ -2,7 +2,7 @@
 import { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import Meteors from 'cp/meteors'
-//import Resize from '../components/resize'
+import Resize from '../components/resize'
 import { Inter } from 'next/font/google'
 import SwitchTheme from 'cp/swith_theme'
 import SwitchLanguage from 'cp/swith_language'
@@ -33,6 +33,7 @@ export default function RootLayout({children}: {children: ReactNode}) {
             <head>
                 <title>Portafolio Luis E.F.</title>
                 <meta name="description" content="Portafolio" />
+                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=optional" rel="stylesheet" />
             </head>
             <body className={inter.className}>
                 {//<Resize />

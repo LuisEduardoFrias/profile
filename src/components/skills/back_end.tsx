@@ -37,8 +37,8 @@ export default function BackEnd() {
     count = count/2 === 0 ? count : count+1;
     
     const StyleGrid = {
-        gridTemplateColumns: `repeat(${count}, Calc(60px - 10px))`,
-        gridTemplateRows: `repeat(${count}, Calc(60px - 10px))`,
+        gridTemplateColumns: `repeat(6, 50px`,
+        gridTemplateRows: `repeat(6, 50px`,
     }
 
     return (

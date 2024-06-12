@@ -7,7 +7,7 @@ import Icon from 'cp/icon'
 import {State} from 'md/state'
 import MenuList from '../../jsons/manu_list.json'
 import Socials from '../../jsons/socials.json'
-import PdfSvg from '../../svg/pdf_svg'; 
+import PdfSvg from 'svg/pdf_svg'; 
 import { useSubscribeState } from '@/subscribe_state/index'
 import 'st/home/footer.css'
 

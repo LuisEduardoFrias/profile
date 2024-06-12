@@ -22,7 +22,9 @@
 			"@/*": ["./src/*"],
 			"cp/*": ["./src/components/*"],
 			"st/*": ["./src/styles/*"],
-			"md/*": ["./src/models/*"]
+			"md/*": ["./src/models/*"],
+			"hk/*": ["./src/hooks/*"],
+			"svg/*": ["./src/svg/*"],
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

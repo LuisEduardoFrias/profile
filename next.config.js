@@ -16,6 +16,12 @@ const nextConfig = {
                 port: '',
                 pathname: '/pmndrs/zustand/main/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'raw.githubusercontent.com',
+                port: '',
+                pathname: '/LuisEduardoFrias/gats_and_boxes/main/gifs/**',
+            },
         ],
         formats: ['image/webp'],
         //  unoptimized: true,

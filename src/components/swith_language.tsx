@@ -1,7 +1,8 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Tooltip, { arrow } from 'cp/tooltip';
 import {language} from 'md/language'
+import useLocalStorage from 'hk/use_local_storage'
 import {State} from 'md/state'
 import { useSubscribeState } from '@/subscribe_state/index'
 import 'st/switch_language.css';
@@ -12,12 +13,18 @@ type TSwith = {
 
 export default function SwitchLanguage({ text}: TSwith){
     const [state, dispatch] = useSubscribeState<State>(["language"])
-    const [check, setCheck] = useState(true);
+    const [{ isEnglish }, setTheme] = useLocalStorage('language', { isEnglish: true });
+//    const [check, setCheck] = useState(isEnglish);
     const [show, setShow] = useState(false);
 
+    useEffect(() => {
+        dispatch({type: "ChangeLanguage", language: !isEnglish ? language.es : language.en});
+    }, [isEnglish,dispatch])
+
     function handleChange() {
-        dispatch({type: "ChangeLanguage", language: check ? language.es : language.en});
-        setCheck(!check);
+        setTheme({ isEnglish: !isEnglish })
+        dispatch({type: "ChangeLanguage", language: isEnglish ? language.es : language.en});
+       // setCheck(!isEnglish);
     }
 
     const handleMouseEnter = () => {
@@ -30,8 +37,8 @@ export default function SwitchLanguage({ text}: TSwith){
 
     return (
         <label className="switch-language" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <input type="checkbox" checked={check} onChange={handleChange} />
-            <span className="slider-language">{check ? text[0] : text[1]}</span>
+            <input type="checkbox" checked={!isEnglish} onChange={handleChange} />
+            <span className="slider-language">{isEnglish ? text[0] : text[1]}</span>
             {show && <Tooltip 
                 text={"Control to change language, Spanish 'ES' or English 'EN'!"} 
                 time={2000} 

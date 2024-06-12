@@ -35,3 +35,27 @@
         margin-block-end: 10px;
     }
 }
+
+@media (width < 950px) {
+    /*.sheet-container {
+        height: 100%;
+        width: 100%;
+    
+        border-radius: inherit;
+        padding: 10px;
+        
+        h2 {
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+            background: linear-gradient(180deg,
+                    var(--theme-1st) 30%,
+                    var(--theme-2nd) 40%,
+                    var(--theme-3rd) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-block-end: 10px;
+        }
+    }
+*/
+}
