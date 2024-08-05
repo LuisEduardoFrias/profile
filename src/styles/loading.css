@@ -11,8 +11,8 @@
 }
 
 .loader {
-  --background: linear-gradient(135deg, #23C4F8, #275EFE);
-  --shadow: rgba(39, 94, 254, 0.28);
+  --background: linear-gradient(135deg, var(--theme-3nd), var(--theme-5th));
+  --shadow: var(--theme_8th);
   --text: #000000;
   --page: rgba(255, 255, 255, 0.36);
   --page-fold: rgba(255, 255, 255, 0.52);

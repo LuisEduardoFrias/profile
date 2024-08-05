@@ -1,23 +1,23 @@
 import KeyBoard from 'cp/keyboard'
-import {language} from 'md/language'
-import {State} from 'md/state'
-import { useSubscribeState } from '@/subscribe_state/index'
-import 'st/skills/typing.css'
+import { language } from 'md/language'
+import { State } from 'md/state'
+import { useSubscribeState } from 'subscribe_state'
+import 'st/skill/typing.css'
 
 export default function Typing() {
-    const [state, dispatch] = useSubscribeState<State>(["language"])
-    const text = state.language === language.es ? "La programación es el arte de crear instrucciones para que las computadoras realicen tareas específicas. Con código, los programadores dan vida a programas y aplicaciones que mejoran nuestra interacción con la tecnología." : "Programming is the art of creating instructions for computers to perform specific tasks. With code, programmers bring programs and applications to life that enhance our interaction with technology."
-    
-    return (
-        <div className="typing-container" >
-            <div className="typing-text" >
-                <TypingText text={text} defaultValue="jdjd" />
-            </div>
-            <div className="typing-keyboard" >
-                <KeyBoard />
-            </div>
-        </div>
-    )
+  const [state, dispatch] = useSubscribeState(["language"])
+  const text = state.language === language.es ? "La programación es el arte de crear instrucciones para que las computadoras realicen tareas específicas. Con código, los programadores dan vida a programas y aplicaciones que mejoran nuestra interacción con la tecnología." : "Programming is the art of creating instructions for computers to perform specific tasks. With code, programmers bring programs and applications to life that enhance our interaction with technology."
+
+  return (
+    <div className="typing-container" >
+      <div className="typing-text" >
+        <TypingText text={text} defaultValue="" />
+      </div>
+      <div className="typing-keyboard" >
+        <KeyBoard />
+      </div>
+    </div>
+  )
 }
 
 
@@ -28,11 +28,11 @@ interface TypingTextProps {
   defaultValue: string | null | undefined;
 }
 
-export function TypingText({ text, defaultValue}: TypingTextProps) {
+export function TypingText({ text, defaultValue }: TypingTextProps) {
   const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   text = text ?? defaultValue;
-  
+
   useEffect(() => {
     if (text) {
       const interval = setInterval(() => {

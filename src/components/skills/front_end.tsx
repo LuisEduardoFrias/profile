@@ -4,20 +4,20 @@ import Skills from "../../jsons/skills.json";
 import Skill from "cp/skills/skill";
 import { Draw } from "./back_end";
 import { Skill as Sk } from "md/skill";
-import "st/skills/back_end.css";
+import "st/skill/back_end.css";
 
 export default function FrontEnd() {
-    const [selectInd, setSelect] = useState(-1)
-    
-    const skills = [...Skills.frontend.advancedExperience, ...Skills.frontend.middleExperience];
-    let count = skills.length;
-    count = count/2 === 0 ? count : count+1;
+  const [selectInd, setSelect] = useState(-1)
 
-    const StyleGrid = {
-        gridTemplateColumns: `repeat(${12}, Calc(60px - 10px))`,
-        gridTemplateRows:  `repeat(${8}, Calc(60px - 10px))`,
-        gridTemplateAreas:
-         `" s1 s1 s3 s3 s3 s7 s7 s10 s10 s10 s13 s13 " 
+  const skills = [...Skills.frontend.advancedExperience, ...Skills.frontend.middleExperience];
+  let count = skills.length;
+  count = count / 2 === 0 ? count : count + 1;
+
+  const StyleGrid = {
+    gridTemplateColumns: `repeat(${12}, Calc(60px - 10px))`,
+    gridTemplateRows: `repeat(${8}, Calc(60px - 10px))`,
+    gridTemplateAreas:
+      `" s1 s1 s3 s3 s3 s7 s7 s10 s10 s10 s13 s13 " 
           " s1 s1 s3 s3 s3 s7 s7 s10 s10 s10 s13 s13 " 
           " s1 s1 s2 s2 s5 s5 s9 s9  s11 s11 s18 s18 " 
           " s4 s4 s2 s2 s5 s5 s9 s9  s11 s11 s18 s18 " 
@@ -25,18 +25,18 @@ export default function FrontEnd() {
           " s4 s4 s19 s6 s6 s6 s9 s9  s12 s12 s17 s17 "
           " s20 s20 s15 s15 s14 s14 s14 s8 s8 s16 s16 s16 "
           " s20 s20 s15 s15 s14 s14 s14 s8 s8 s16 s16 s16  "`,
-          overflow:"scroll"
-    }
+    overflow: "scroll"
+  }
 
-    return (
-        <div className="backend-page">
-            <h2>Front End</h2>
+  return (
+    <div className="backend-page">
+      <h2>Front End</h2>
 
-            <div style={StyleGrid}>
-                {
-                    skills.map((e: Sk, index) => <Draw key={index} selectInd={selectInd} onclick={()=> setSelect(index)} skill={e} index={index} />)
-                }
-            </div>
-        </div>
-    )
+      <div style={StyleGrid}>
+        {
+          skills.map((e: Sk, index) => <Draw key={index} selectInd={selectInd} onclick={() => setSelect(index)} skill={e} index={index} />)
+        }
+      </div>
+    </div>
+  )
 }

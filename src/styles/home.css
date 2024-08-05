@@ -1,56 +1,60 @@
-
 .sheet-left {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 320px 130px;
-    grid-template-areas: "header" "footer";
-    grid-row-gap: 5px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+
+@media (width > 800px) {
+  .sheet-left {
+    height: 440px;
+  }
 }
 
 .swipe_up {
-    visibility: hidden;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    animation: moveUp 2s ease-in infinite both;
+  visibility: hidden;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  animation: moveUp 2s ease-in infinite both;
 }
 
 @keyframes moveUp {
-    to {
-        bottom: 100px;
-    }
+  to {
+    bottom: 100px;
+  }
 }
 
 .sheet-right {
-    width: inherit;
-    height: inherit;
-    border-radius: 10px;
+  width: inherit;
+  height: inherit;
+  border-radius: 10px;
 }
 
 main {
-    width: inherit;
-    height: inherit;
-    
-    display: flex;
-    justify-content: center;
+  width: inherit;
+  height: inherit;
+  
+  display: flex;
+  justify-content: center;
 }
 
 /*********** Responsibe **************/
 
-@media (width <= 800px) {
-    
-    .sheet-left {
-        height: 380px;
-        overflow: auto;
-            
-        grid-gap: 20px;
-    }
-    
-    .swipe_up {
-        visibility: visible;
-    }
+@media (width <=800px) {
+  
+  .sheet-left {
+    height: 390px;
+    padding-block-end: 20px;
+  }
+  
+  .swipe_up {
+    visibility: visible;
+  }
 }

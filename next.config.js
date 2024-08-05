@@ -2,6 +2,9 @@
 const nextConfig = {
     basePath: "/profile",
     reactStrictMode: true,
+    env: {
+    PATH_CV: "/LuisEF_CV_En.pdf",
+  },
     images: {
         remotePatterns: [
             {

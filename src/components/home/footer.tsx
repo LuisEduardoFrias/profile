@@ -1,67 +1,70 @@
 "use client"
 
-import { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Image from 'next/image'
 import Li, { Option } from './li'
 import Icon from 'cp/icon'
-import {State} from 'md/state'
+import { State } from 'md/state'
 import MenuList from '../../jsons/manu_list.json'
 import Socials from '../../jsons/socials.json'
-import PdfSvg from 'svg/pdf_svg'; 
-import { useSubscribeState } from '@/subscribe_state/index'
+import PdfSvg from 'svg/pdf_svg';
+import RefreshSvg from 'svg/refresh_svg';
+import { useSubscribeState } from 'subscribe_state';
 import 'st/home/footer.css'
 
 type Social = {
-    href: string,
-    src: string,
-    alt: string,
+  href: string,
+  src: string,
+  alt: string,
 }
 
 export default function Footer({ days_one }: { days_one: any }) {
-    const [{language}, dispatch] = useSubscribeState<State>(["language"])
-    const [downloading, setDownloading] = useState(false);
+  const [{ language }, dispatch] = useSubscribeState(["language"])
+  const [downloading, setDownloading] = useState(false);
+  const fileDownloadRef = useRef(null);
 
-    function handleDownload() {
-        setDownloading(true);
-        
-        const downloadLink = document.createElement('a');
-        downloadLink.href = '/luis_cv.pdf'; 
-        downloadLink.download = 'luis_cv.pdf';
-        downloadLink.click();
-        
-        setTimeout(() => {
-            setDownloading(false);
-        }, 2000);
-    };
+  function handleDownload(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+    if (downloading) {
+      event.preventDefault();
+      return;
+    }
 
-    return (
-        <footer className="footer-container" >
-            <nav className={days_one.className}>
-                <ul>
-                    {MenuList.map((li: Option, i: number) => <Li key={i} {...li} language={language} />)}
-                </ul>
-            </nav>
-            <div>
-                <button className="downloadPdfBtn" disabled={downloading} onClick={handleDownload}>
-                    {downloading ? 
-                        <Icon iconName="refresh" className="icon-refresh" /> :
-                        <PdfSvg/>
-                    }
-                    {"CV"}
-                </button>
-                <div className="social-footer" >
-                    {Socials.map((social: Social, i: number) => {
-                            const DynamicComponent = require(`../../svg/${social.src}.tsx`).default;
-                           
-                            return (
-                                <a key={i} href={social.href} target="_blank">
-                                    <DynamicComponent />
-                                </a>
-                            );
-                        })
-                    }
-                </div>
-            </div>
-        </footer >
-    );
+    setDownloading(true);
+    setTimeout(() => {
+      setDownloading(false);
+    }, 1700);
+  };
+
+  return (
+    <footer className="footer-container" >
+      <nav className={days_one.className}>
+        <ul>
+          {MenuList.map((li: Option, i: number) => <Li key={i} {...li} language={language} />)}
+        </ul>
+      </nav>
+      <div>
+        <a href={`./profile/${process.env.PATH_CV && 'insert environment variable.'}`} className="downloadPdfBtn" onClick={handleDownload}>
+          {downloading ?
+            /* <Icon iconName="refresh" className="icon-refresh" /> :
+            */
+            <RefreshSvg /> :
+            <PdfSvg />
+          }
+          {"CV"}
+        </a>
+        <div className="social-footer" >
+          {Socials.map((social: Social, i: number) => {
+            const DynamicComponent = require(`../../svg/${social.src}.tsx`).default;
+
+            return (
+              <a key={i} href={social.href} target="_blank">
+                <DynamicComponent />
+              </a>
+            );
+          })
+          }
+        </div>
+      </div>
+    </footer >
+  );
 }

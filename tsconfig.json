@@ -23,8 +23,9 @@
 			"cp/*": ["./src/components/*"],
 			"st/*": ["./src/styles/*"],
 			"md/*": ["./src/models/*"],
+			"js/*": ["./src/json/*"],
 			"hk/*": ["./src/hooks/*"],
-			"svg/*": ["./src/svg/*"],
+			"svg/*": ["./src/svg/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

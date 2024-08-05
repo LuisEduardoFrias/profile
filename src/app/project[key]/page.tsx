@@ -28,8 +28,13 @@ export default function Projects() {
     <div className="project-container" >
       <Meteors />
       <header>
-        <BackButton />
-        <h1 className={`${days_one.className} project-title`}>{title}</h1>
+      <BackButton />
+      <h1 className={`${days_one.className} project-title`}>{title}</h1>
+        <nav>
+          <ul>
+            <li>ah</li>
+          </ul>
+        </nav>
       </header>
       <main>
         {projects.map((element: Project, index: number) =>
@@ -38,13 +43,19 @@ export default function Projects() {
               <CardTitle>
                 <h2>{element.title}</h2>
               </CardTitle>
+              <a href={element.repo} target="_blank">
+                <GitHubSvg />
+              </a>
               <CardTegnologys tegnologys={element.tegnologys} />
             </CardHeader>
             <CardContent>
+              <CardDescription>
+                <p>{element.description}</p>
+              </CardDescription>
               <CardImages>
-                {
-                  <Image className="card-images-img" src={element.imgs[0]} width={1000} height={1000} alt={`Image of project ${element.title}`} />
-                }
+                {element.imgs.map((img: string, index: number) =>
+                  <Image key={index} className="card-images-img" src={img} width={1000} height={1000} alt={`Image of project ${element.title}`} />
+                )}
               </CardImages>
             </CardContent>
           </Card>
@@ -52,4 +63,4 @@ export default function Projects() {
       </main>
     </div>
   )
-} 
+}

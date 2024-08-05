@@ -3,55 +3,55 @@ import { useState } from 'react'
 import Skills from '../../jsons/skills.json'
 import { Skill as Sk } from 'md/skill'
 import Image from 'next/image'
-import 'st/skills/back_end.css'
+import 'st/skill/back_end.css'
 
-type TDrawProps = { 
-    skill: Sk, 
-    index: number, 
-    selectInd: number, 
-    onclick:()=>void 
+type TDrawProps = {
+  skill: Sk,
+  index: number,
+  selectInd: number,
+  onclick: () => void
 }
 
-export function Draw({ skill, index, selectInd, onclick}: TDrawProps) {
-    
-    const Styles = {
-        gridArea:`s${index+1}`, 
-    }
+export function Draw({ skill, index, selectInd, onclick }: TDrawProps) {
 
-    return (
-        <div key={index} style={Styles} onClick={onclick} >
-            <div>
-              { skill.href && <Image src={skill.href} width={70} height={70} alt={skill.alt} />}
-              { skill.name && <span>{skill.name}</span> }
-            </div>
-            <div></div>
-        </div>
-    )
+  const Styles = {
+    gridArea: `s${index + 1}`,
+  }
+
+  return (
+    <div key={index} style={Styles} onClick={onclick} >
+      <div>
+        {skill.href && <Image src={skill.href} width={70} height={70} alt={skill.alt} />}
+        {skill.name && <span>{skill.name}</span>}
+      </div>
+      <div></div>
+    </div>
+  )
 }
 
 export default function BackEnd() {
-    const [selectInd, setSelect] = useState(-1)
-    
-    const skills = [...Skills.backend.advancedExperience, ...Skills.backend.middleExperience];
-    let count = skills.length;
-    count = count/2 === 0 ? count : count+1;
-    
-    const StyleGrid = {
-        gridTemplateColumns: `repeat(6, 50px`,
-        gridTemplateRows: `repeat(6, 50px`,
-    }
+  const [selectInd, setSelect] = useState(-1)
 
-    return (
-        <div className="backend-page">
-            <h2>Back End</h2>
+  const skills = [...Skills.backend.advancedExperience, ...Skills.backend.middleExperience];
+  let count = skills.length;
+  count = count / 2 === 0 ? count : count + 1;
 
-            <div style={StyleGrid}>
-                {
-                    skills.map((e: Sk, index) => <Draw key={index} selectInd={selectInd} onclick={()=> setSelect(index)} skill={e} index={index} />)
-                }
-            </div>
-        </div>
-    )
+  const StyleGrid = {
+    gridTemplateColumns: `repeat(6, 50px`,
+    gridTemplateRows: `repeat(6, 50px`,
+  }
+
+  return (
+    <div className="backend-page">
+      <h2>Back End</h2>
+
+      <div style={StyleGrid}>
+        {
+          skills.map((e: Sk, index) => <Draw key={index} selectInd={selectInd} onclick={() => setSelect(index)} skill={e} index={index} />)
+        }
+      </div>
+    </div>
+  )
 }
 
 /*
