@@ -4,7 +4,7 @@ import Meteors from 'cp/meteors';
 import error404 from "../../public/imgs/homero_simpsons_404_edi.webp";
 import Link from "next/link";
 import { language } from 'md/language';
-import { useSubscribeState } from 'subscribe_state';
+import { useSubscribeState } from 'subscribe_state'
 import "st/notfound.css";
 
 export default function NotFoundPage({
