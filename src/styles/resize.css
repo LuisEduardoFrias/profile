@@ -1,0 +1,17 @@
+
+.container{
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 6px 12px;
+    background-color: #7f7f7f60;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 9999999999999999;
+    display: flex;
+    justify-content: center;
+    
+    > label:first-child {
+        margin-inline-end: 20px;
+    }
+}

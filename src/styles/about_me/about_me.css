@@ -1,0 +1,48 @@
+.about-me {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center;
+  
+  >img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid var(--theme-4th);
+    
+  }
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
