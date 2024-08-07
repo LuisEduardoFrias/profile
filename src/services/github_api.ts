@@ -6,7 +6,7 @@ const octokit = new Octokit({
 
 });
 
-export default async function getRepo() {
+export default async function getRepos() {
   const array = [];
   try {
     const { data: repositorios } = await octokit.request("GET /user/repos");

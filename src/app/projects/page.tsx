@@ -1,14 +1,15 @@
 "use client"
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import projects from '../../jsons/projects.json'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Project } from 'md/project'
+//import { Project } from 'md/project'
 import GitHubSvg from 'svg/github_svg';
 import BookContainer, { Pages } from 'cp/book_container'
 import BackButton from 'cp/back_button'
 import Keyboard from 'cp/keyboard'
 import Meteors from 'cp/meteors'
+import getRepos from 'sv/github_api'
 import Icon from 'cp/icon'
 import localFont from 'next/font/local'
 import { language } from 'md/language'
@@ -24,6 +25,14 @@ const days_one = localFont({
 export default function Projects() {
   const [state, dispatch] = useSubscribeState(["language"])
   const title = state.language === language.en ? "</Projects>" : "Proyectos";
+  const [project, setProject] = useState([])
+
+  useEffect(() => {
+    (async () => {
+      setProject(await getRepos())
+    })()
+  }, [])
+
   return (
     <div className="project-container" >
       <Meteors />
