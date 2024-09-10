@@ -1,0 +1,133 @@
+/*
+*/
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+:root {
+  --blue-0: #83ecff;
+  --blue-1st: #48dfff;
+  --blue-2nd: #1ec4ff;
+  --blue-3rd: #06a9ff;
+  --blue-4th: #0093fa;
+  --blue-5th: #0872c5;
+  --blue-6th: #0d609b;
+  --blue-7th: #0e3a5d;
+  --blue-8th: #031524;
+  
+  --green-0: #72ff53;
+  --green-1st: #41fb20;
+  --green-2nd: #21fa00;
+  --green-3rd: #12b500;
+  --green-4th: #0f8902;
+  --green-5th: #116c08;
+  --green-6th: #125b0c;
+  --green-7th: #023300;
+  --green-8th: #011900;
+  
+  --font-color: #ffffff;
+  --font-color1: #fa6a00;
+  --border-color: #ffffff;
+  --border-color1: #fa6a00;
+  --border-width: 2px;
+  
+  --theme-bg: var(--blue-8th);
+  --theme-0: var(--blue-0);
+  --theme-1st: var(--blue-1st);
+  --theme-2nd: var(--blue-2nd);
+  --theme-3rd: var(--blue-3rd);
+  --theme-4th: var(--blue-4th);
+  --theme-5th: var(--blue-5th);
+  --theme-6th: var(--blue-6th);
+  --theme-7th: var(--blue-7th);
+  --theme-0th: var(--blue-8th);
+}
+
+* {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--font-color);
+}
+
+body {
+  min-height: 100dvh;
+  /* color: var(--font-color); */
+  border-color: var(--border-color);
+  border-width: var(--border-width);
+  background-color: var(--theme-bg);
+}
+
+.bodyContainer {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body:has(#swith-cb-theme:checked) {
+  --font-color1: #78018a;
+  --border-color1: #78018a;
+  
+  --theme-bg: var(--green-8th);
+  --theme-0: var(--green-0);
+  --theme-1st: var(--green-1st);
+  --theme-2nd: var(--green-2nd);
+  --theme-3rd: var(--green-3rd);
+  --theme-4th: var(--green-4th);
+  --theme-5th: var(--green-5th);
+  --theme-6th: var(--green-6th);
+  --theme-7th: var(--green-7th);
+  --theme-8th: var(--green-8th);
+}
+
+body:has(#swith-cb-theme:checked) .skill-title {
+  background-color: rgba(41, 41, 41, 0.3);
+}
+
+body #svg {
+  fill: var(--theme-3rd);
+}
+
+body:has(#swith-cb-theme:checked) #svg {
+  fill: var(white);
+}
+
+body:has(#swith-cb-theme:checked) #logo {
+  /*background-color: #00000070;*/
+}
+
+.swipe_up>span {
+  color: white;
+}
+
+body:has(#swith-cb-theme:checked) .swipe_up>span {
+  color: var(--theme-3rd);
+}
+
+body:has(#swith-cb-theme:checked) #meteors {
+  visibility: visibility;
+}
+
+/*
+button, a:hover {
+    transform: scale(1.2);
+}
+
+button, a:active {
+    transform: scale(0.8);
+}
+*/

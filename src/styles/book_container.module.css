@@ -1,0 +1,234 @@
+/*
+.sheetLeft {
+  grid-area: left;
+  width: 100%;
+  height: 98%;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  border: 2px solid palegreen;
+  /* backface-visibility: hidden;*/
+
+/*
+  
+}
+
+
+.changeLeftPage {
+  transform-origin: right;
+  /*backface-visibility: hidden;*/
+/*
+  
+animation: changeLeftPage 1s ease;
+background-color: var(--theme-4th);
+perspective: 550px;
+perspective-origin: 150% 150%;
+transform-style: preserve-3d;
+transform: translateZ(300px) rotateY(0deg);
+}
+
+@keyframes changeLeftPage {
+  100% {
+    transform: translateZ(300px) rotateY(180deg);
+  }
+}
+
+*/
+/****
+///////////////
+****/
+
+.sheetRight {
+  position: relative;
+  grid-area: right;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  /*  backface-visibility: hidden;*/
+
+}
+
+.changeRightPage {
+  transform-origin: left;
+  /* backface-visibility: hidden;*/
+
+  animation: changeRightPage 1s ease;
+  background-color: var(--theme-4th);
+  perspective: 550px;
+  perspective-origin: 150% 150%;
+  transform-style: preserve-3d;
+  transform: translateZ(300px) rotateY(0deg);
+}
+
+@keyframes changeRightPage {
+  100% {
+    transform: translateZ(300px) rotateY(180deg);
+  }
+}
+
+/****
+///////////////
+****/
+
+.back {
+  left: 5px;
+}
+
+.back:hover {
+  border: 1px solid var(--border-color);
+  width: 40px;
+  height: 30px;
+  left: -1px;
+  padding: 5px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 2px 0 1px #005591;
+}
+
+.back:active {
+  border: 1px solid var(--border-color);
+  width: 40px;
+  height: 30px;
+  left: -1px;
+  padding: 5px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: inset 0 0 2px 2px #005591;
+}
+
+.next {
+  right: 5px;
+}
+
+.next:hover {
+  border: 1px solid var(--border-color);
+  width: 40px;
+  height: 30px;
+  right: -1px;
+  padding: 5px;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0 2px 0 1px #005591;
+}
+
+.next:active {
+  border: 1px solid var(--border-color);
+  width: 40px;
+  height: 30px;
+  right: -1px;
+  padding: 5px;
+  border-radius: 10px 0 0 10px;
+  box-shadow: inset 0 0 2px 2px #005591;
+}
+
+.changePage {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  user-select: none;
+}
+
+
+.changePage>div:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: move 2s infinite both;
+}
+
+.changePage>div:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+@keyframes move {
+  from {
+    opacity: 1;
+  }
+}
+
+.sheetLeftPage,
+.sheetRightPage {
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  border-radius: 10px;
+  background-color: var(--theme-4th);
+}
+
+.sheetLeftPage {
+  right: 0;
+}
+
+.sheetRightPage {
+  left: 0;
+}
+
+.sheetCloseLeftPage {
+  animation: close .7s ease .2s both;
+}
+
+.sheetCloseRightPage {
+  animation: close .7s ease .2s both;
+}
+
+@keyframes close {
+  100% {
+    width: 100%;
+  }
+}
+
+.sheetLeftContainerPage,
+.sheetRightContainerPage {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  
+  display: flex;
+  align-items: center;
+}
+
+.sheetLeftContainerPage {
+  justify-content: flex-end;
+}
+
+.sheetRightContainerPage {
+  justify-content: flex-start;
+}
+
+.sheetLeftContainerPage>div,
+.sheetRightContainerPage>div {
+  width: 95%;
+  height: 100%;
+}
+
+.sheetLeftContainerPage>div {
+  border-radius: 0 10px 10px 0;
+}
+
+.sheetRightContainerPage>div {
+  border-radius: 10px 0 0 10px;
+}
+
+@media (width < 800px) {
+  
+  .backContainerHome {
+    height: 100vh;
+  }
+  
+  .containerHome {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-areas: "right" "left";
+  }
+  
+  .sheetLeft {
+    mask-image: linear-gradient(#00000089 1%, transparent);
+  }
+}

@@ -1,298 +1,60 @@
-/** @format */
-
-.back-container-home {
-	margin: 20px;
-	width: 98%;
-	height: 450px;
-
-	position: absolute;
-	backface-visibility: hidden;
-	border-radius: 5px;
-	overflow: hidden;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	overflow: hidden;
+.sheet-left {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll;
 }
 
-.back-container-home::before {
-	position: absolute;
-	content: " ";
-	display: block;
-	width: 160%;
-	height: 360px;
-	background: linear-gradient(
-		90deg,
-		rgba(147, 229, 255, 1) 1%,
-		rgba(49, 221, 255, 1) 27%,
-		rgb(39, 86, 255) 51%,
-		rgba(49, 221, 255, 1) 75%,
-		rgba(147, 229, 255, 1) 100%
-	);
-	animation: rotation 5000ms infinite linear;
+@media (width > 800px) {
+  .sheet-left {
+    height: 440px;
+  }
 }
 
-@keyframes rotation {
-	0% {
-		transform: rotateZ(0deg);
-	}
-	0% {
-		transform: rotateZ(360deg);
-	}
+.swipe_up {
+  visibility: hidden;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  animation: moveUp 2s ease-in infinite both;
 }
 
-.container-home {
-	--h2-color: #0b40a8;
-	--background-color: #000a61;
-	--text-color: #ffffff;
-
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-	border: 0.5px solid var(--text-color);
-	width: 99%;
-	height: 99%;
-	background-color: black;
-
-	border-radius: 5px;
-
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	grid-column-gap: 0px;
-	grid-row-gap: 0px;
-	/*
-///////////////////
-///////////////////___HEADER
-///////////////////
-*/
-	header {
-		width: 100%;
-		height: auto;
-		grid-area: 1 / 1 / 2 / 2;
-		padding-block-start: 50px;
-		text-wrap: wrap;
-		box-sizing: border-box;
-
-		div {
-			text-align: left;
-			margin-block-start: 30px;
-			margin-inline-start: 15px;
-
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: flex-start;
-			gap: 10px;
-
-			div {
-				margin-block-end: 10px;
-
-				h1 {
-					font-size: 27px;
-					width: 200px;
-				}
-
-				h2 {
-					font-size: 35px;
-					font-weight: 300;
-
-					background: linear-gradient(
-						230deg,
-						rgb(8, 87, 233) 0%,
-						rgb(27, 81, 203) 10%,
-						rgb(144, 188, 255) 17%,
-						rgb(18, 63, 165) 24%,
-						rgb(18, 63, 165) 35%,
-						rgb(27, 81, 203) 40%,
-						rgb(144, 188, 255) 48%,
-						rgb(18, 63, 165) 54%,
-						rgb(26, 90, 195) 60%,
-						rgb(27, 81, 203) 67%,
-						rgb(144, 188, 255) 75%,
-						rgb(18, 63, 165) 82%,
-						rgb(18, 87, 165) 89%,
-						rgb(27, 100, 188) 100%
-					);
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;
-				}
-			}
-
-			p {
-				margin-inline-start: 18px;
-				text-justify: distribute;
-				text-align: start;
-				width: 80%;
-			}
-		}
-	}
-	/*
-///////////////////
-///////////////////___MAIN
-///////////////////
-*/
-	main {
-		position: relative;
-		width: 100%;
-		height: calc(100% - 1px);
-		background-color: var(--background-color);
-		grid-area: 1 / 2 / 3 / 3;
-		box-sizing: border-box;
-		border-radius: 0 5px 5px 0;
-
-		display: flex;
-		justify-content: center;
-
-		img:first-child {
-			position: absolute;
-			width: 180px;
-			height: auto;
-			left: 0;
-			transform: translateX(-50%);
-		}
-
-		img:last-child {
-			width: 450px;
-			height: auto;
-			border-radius: 0 15% 15px 0;
-		}
-	}
-	/*
-///////////////////
-///////////////////___FOOTER
-///////////////////
-*/
-	footer {
-		width: 100%;
-		height: 100%;
-		align-self: flex-start;
-		grid-area: 2 / 1 / 3 / 2;
-		box-sizing: border-box;
-		box-sizing: border-box;
-
-		display: flex;
-		justify-content: center;
-
-		nav {
-			width: 100%;
-			box-sizing: border-box;
-			padding-block-start: 20px;
-		}
-
-		ul {
-			width: 100%;
-			height: 100%;
-			box-sizing: border-box;
-			background-color: transparent;
-			list-style: none;
-
-			display: flex;
-			justify-content: center;
-			gap: 20px;
-
-			li {
-				width: 24px;
-				height: 24px;
-				box-sizing: border-box;
-				cursor: pointer;
-				transition: 400ms;
-				-webkit-tap-highlight-color: transparent;
-				outline: none;
-
-				border: 1px solid var(--text-color);
-				border-radius: 50%;
-				filter: blur(0px);
-				transform: scale(1);
-
-				transition: filter 1s ease;
-				transition: scale 1s ease;
-				transition: border 1s ease;
-				transition: border-radius 1s ease;
-
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-				a {
-					overflow: hidden;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					background-color: transparent;
-					transition: all 0.3s ease-in-out;
-				}
-
-				a:hover {
-					box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
-					color: var(--text-color);
-				}
-
-				a:hover .tooltip {
-					opacity: 1;
-					visibility: visible;
-					padding: 3px;
-
-					bottom: -20px;
-					border: 1px solid var(--text-color);
-					border-radius: 3px;
-					background-color: transparent;
-					color: var(--h2-color);
-
-					transition: bottom 1s ease;
-					transition: border 1s ease;
-					transition: border-radius 1s ease;
-					transition: background-color 1s ease;
-					transition: color 1s ease;
-				}
-
-				img {
-					width: 18px;
-					height: 18px;
-				}
-
-				.tooltip {
-					position: absolute;
-					opacity: 0;
-					pointer-events: none;
-					visibility: hidden;
-					font-size: 6px;
-
-					bottom: 0;
-					border: 0 dashed var(--h2-color);
-					border-radius: 0%;
-					color: var(--text-color);
-					background-color: var(--h2-color);
-
-					transition: bottom 1s ease;
-					transition: border 1s ease;
-					transition: border-radius 1s ease;
-					transition: color 1s ease;
-					transition: background-color 1s ease;
-				}
-			}
-
-			li:hover {
-				transform: scale(2);
-				border: 1px dashed var(--text-color);
-				border-radius: 40%;
-
-				transition: scale 1s ease;
-				transition: border 1s ease;
-				transition: border-radius 1s ease;
-			}
-		}
-
-		ul:hover > li:not(:hover) {
-			filter: blur(3px);
-			transform: scale(0.9);
-
-			transition: filter 3s ease;
-			transition: scale 2s ease;
-		}
-	}
+@keyframes moveUp {
+  to {
+    bottom: 100px;
+  }
 }
 
+.sheet-right {
+  width: inherit;
+  height: inherit;
+  border-radius: 10px;
+}
+
+main {
+  width: inherit;
+  height: inherit;
+  
+  display: flex;
+  justify-content: center;
+}
+
+/*********** Responsibe **************/
+
+@media (width <=800px) {
+  
+  .sheet-left {
+    height: 390px;
+    padding-block-end: 20px;
+  }
+  
+  .swipe_up {
+    visibility: visible;
+  }
+}

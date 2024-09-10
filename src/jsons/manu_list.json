@@ -1,0 +1,32 @@
+[
+    {
+        "src": "skill_svg",
+        "alt": "Skills icon",
+        "name": ["</Skill >","Habilidades"],
+        "href": "skills"
+    },
+    {
+        "src": "project_svg",
+        "alt": "Projects icon",
+        "name": ["</Projects >","Proyectos"],
+        "href": "projects"
+    },
+    {
+        "src": "experience_svg",
+        "alt": "Experiences icon",
+        "name": ["</Experiences >","Experiencias"],
+        "href": "experiences"
+    },
+    {
+        "src": "studie_svg",
+        "alt": "Studies icon",
+        "name": ["</Studies >","Estudios"],
+        "href": "studies"
+    },
+    {
+        "src": "about_svg",
+        "alt": "About me icon",
+        "name": ["</About_me >","Sobre mi"],
+        "href": "about_me"
+    }
+]

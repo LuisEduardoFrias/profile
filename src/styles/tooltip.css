@@ -1,0 +1,63 @@
+
+.tooltip {
+    --base: 2em;
+    --height: 1em;
+    --color: #0099ffc3;
+    
+    position: absolute;
+    width: 200px;
+    border-image: fill 0 / 0 / var(--height)
+    conic-gradient(var(--color) 0 0);
+    
+    padding: 1em;
+    
+    span {
+        user-select: none;
+        font-weight: 500;
+    }
+}
+
+.centerBottom {
+    clip-path: 
+        polygon(0 100%, 0 0, 100% 0, 100% 100%,
+        calc(50% + var(--base) / 2) 100%,
+        50% calc(100% + var(--height)),
+        calc(50% - var(--base) / 2) 100%);
+}
+
+.leftBottom {
+    clip-path: 
+        polygon(0 100%, 0 0, 100% 0, 100% 100%,
+        calc(50% + var(--base) / 2) 100%,
+        30% calc(100% + var(--height)),
+        calc(50% - var(--base) / 2) 100%);
+}
+
+.rightBottom {
+    clip-path: 
+        polygon(0 100%, 0 0, 100% 0, 100% 100%,
+        calc(50% + var(--base) / 2) 0,
+        70% calc(100% + var(--height)),
+        calc(50% - var(--base) / 2) 100%);
+}
+
+.centerTop {
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%, 
+        calc(50% + var(--base) / 2) 0%,
+        50% calc(-50% + var(--height)),
+        calc(50% - var(--base) / 2) 0%);
+}
+
+.leftTop {
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%, 
+        calc(50% + var(--base) / 2) 0%,
+        30% calc(-50% + var(--height)),
+        calc(50% - var(--base) / 2) 0%);
+}
+
+.rightTop {
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%, 
+        calc(50% + var(--base) / 2) 0%,
+        70% calc(-50% + var(--height)),
+        calc(50% - var(--base) / 2) 0%);
+}
