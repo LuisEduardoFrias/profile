@@ -164,14 +164,13 @@
   }
 }
 
-#svg_refresh {
+.svg_refresh {
   animation: refresh-rotate 2s ease-in-out infinite;
-  transform-origin: center;
 }
 
 @keyframes refresh-rotate {
   to {
-    transform: rotate(360deg);
+    transform: rotateZ(360deg);
   }
 }
 

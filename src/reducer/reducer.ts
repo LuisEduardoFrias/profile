@@ -10,7 +10,7 @@ export default function Reducer<T>(state: T, actions: Action) {
     ChangeLanguage: () => {
       return { ...state, language: actions.language }
     },
-    default: () => alert(`the action ${actions.type} isn't valid.`)
+    default: () => console.error(`the action ${actions.type} isn't valid.`)
   }
 
   return (_actions[actions.type] || _actions["default"])();

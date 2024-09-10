@@ -25,11 +25,11 @@ const days_one = localFont({
 export default function Projects() {
   const [state, dispatch] = useSubscribeState(["language"])
   const title = state.language === language.en ? "</Projects>" : "Proyectos";
-  const [project, setProject] = useState([])
+  const [projects, setProjects] = useState([])
 
   useEffect(() => {
     (async () => {
-      setProject(await getRepos())
+      setProjects(await getRepos())
     })()
   }, [])
 
@@ -44,9 +44,11 @@ export default function Projects() {
         {projects.map((element: Project, index: number) =>
           <Card key={index}>
             <CardHeader>
+              <p>{element.url}</p>
               <CardTitle>
                 <h2>{element.title}</h2>
               </CardTitle>
+              <p>{element.description}</p>
               <CardTegnologys tegnologys={element.tegnologys} />
             </CardHeader>
             <CardContent>

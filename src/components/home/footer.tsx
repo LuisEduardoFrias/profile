@@ -43,12 +43,14 @@ export default function Footer({ days_one }: { days_one: any }) {
         </ul>
       </nav>
       <div>
-        <a href={`./profile/${process.env.PATH_CV && 'insert environment variable.'}`} className="downloadPdfBtn" onClick={handleDownload}>
+        <a href={`./profile/${process.env.NEXT_PUBLIC_PATH_CV ?? 'insert environment variable.'}`} className="downloadPdfBtn" onClick={handleDownload}>
           {downloading ?
             /* <Icon iconName="refresh" className="icon-refresh" /> :
             */
-            <RefreshSvg /> :
-            <PdfSvg />
+            <div className="svg_refresh">
+              <RefreshSvg />
+            </div> :
+            <PdfSvg /> 
           }
           {"CV"}
         </a>
